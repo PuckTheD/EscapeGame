@@ -52,6 +52,7 @@
                                 </svg>
                             </div>
                         </li>
+                        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
@@ -72,6 +73,8 @@
                                 </svg>
                             </div>
                         </li>
+                        {% endif %}
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
@@ -82,6 +85,7 @@
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

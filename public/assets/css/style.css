@@ -120,6 +120,7 @@ hr {transform:scale(2)}
     font-weight: 800;
     border: #7B2A27 4px solid;
     width: 60%;
+    margin-bottom: 100px;
 }
 
 .jumbotron .btn {

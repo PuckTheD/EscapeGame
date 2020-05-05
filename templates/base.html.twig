@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        {% endblock %}
-        <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}} ">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Esc{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+    {% endblock %}
+    <link rel="stylesheet" href="{{ asset ('assets/css/style.css') }} ">
 
-    </head>
+</head>
 
-    <header>
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/esc-logo-2-final.png') }}" width="80px" height="80px" alt="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <div class="svg-wrapper">
-                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
-                                    <div id="text">
-                                        <a href=""><span class="spot"></span>Accueil</a>
-                                    </div>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="svg-wrapper">
-                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
-                                    <div id="text">
-                                        <a href=""><span class="spot"></span>Missions</a>
-                                    </div>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="nav-item"><div class="svg-wrapper">
-                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
-                                    <div id="text">
-                                        <a href=""><span class="spot"></span>F.A.Q</a>
-                                    </div>
-                                </svg>
-                            </div>
-                        </li>
-                        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+<header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('images/esc-logo-2-final.png') }}" width="80px" height="80px" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                                <rect id="shape" height="40" width="150"/>
+                                <div id="text">
+                                    <a href=""><span class="spot"></span>Accueil</a>
+                                </div>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                                <rect id="shape" height="40" width="150"/>
+                                <div id="text">
+                                    <a href=""><span class="spot"></span>Missions</a>
+                                </div>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                                <rect id="shape" height="40" width="150"/>
+                                <div id="text">
+                                    <a href=""><span class="spot"></span>F.A.Q</a>
+                                </div>
+                            </svg>
+                        </div>
+                    </li>
+                    {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
+                                    <rect id="shape" height="40" width="150"/>
                                     <div id="text">
                                         <a href=""><span class="spot"></span>S'enregistrer</a>
                                     </div>
@@ -66,39 +70,45 @@
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
+                                    <rect id="shape" height="40" width="150"/>
                                     <div id="text">
                                         <a href=""><span class="spot"></span>Se connecter</a>
                                     </div>
                                 </svg>
                             </div>
                         </li>
-                        {% endif %}
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% endif %}
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
+                                    <rect id="shape" height="40" width="150"/>
                                     <div id="text">
                                         <a href=""><span class="spot"></span>Se déconnecter</a>
                                     </div>
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
                         </li>
-                        {% endif %}
-                    </ul>
-                </div>
+                    {% endif %}
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            <script src="{{ asset ('assets/javascript/javaScript.js')}}"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        {% endblock %}
-    </body>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset ('assets/javascript/javaScript.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+{% endblock %}
+</body>
 </html>

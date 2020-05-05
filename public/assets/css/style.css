@@ -1,43 +1,19 @@
-body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; background: #BA5536; color: #343A40;}
+body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; background: #F2F2F2; color: #0C0F14;}
 h1.heading1 { font-size: 36px; font-weight: 800; text-align: center; margin-top: 40px; text-shadow: 1px 1px 0px rgba( 0, 0, 0, .50 );}
-.jumbotron { margin-top: 50px; margin-bottom: 50px; box-shadow: 0px 0px 40px 0px rgba( 164, 56, 32, .50 );}
-.jumbotron p { font-size: 16px; color: #373737; line-height: 1.6;}
-.jumbotron h1 { color: #A43820; font-weight: 800;}
-.jumbotron .btn { background-color: #A43820; border: none;}
-.jumbotron .btn:hover, .jumbotron .btn:focus, .jumbotron .btn.active { background-color: #BA5536;}
-.moving-wave { position: relative; display: inline-block; width: 100%; height: 10px; top: -5px;}
-.moving-wave .wave { height: 0; width: 300%; position: relative; top: 0; animation: waves 30s ease-in-out infinite;}
-.moving-wave .wave.waveup:before { content: ""; display: block; left: 0; bottom: 0; right: 0; background-repeat: repeat; height: 10px; background-size: 20px 20px; background-image: radial-gradient(circle at 10px -5px, #46211A 13px, transparent 12px);}
-.moving-wave .wave.wavedown:before { content: ""; display: block; left: 0; bottom: 0; right: 0; background-repeat: repeat; height: 10px; background-size: 20px 20px; background-image: radial-gradient(circle at 10px -5px, transparent 12px, #46211A 13px);}
+.jumbotron { margin-top: 50px; margin-bottom: 50px; box-shadow: 0px 0px 40px 0px rgba( 12, 15, 20, .50 );}
+.jumbotron p { font-size: 16px; color: #0C0F14; line-height: 1.6;}
+.jumbotron h1 { color: #7B2A27; font-weight: 800;}
+.jumbotron .btn { background-color: #7B2A27; border: none;}
+.jumbotron .btn:hover, .jumbotron .btn:focus, .jumbotron .btn.active { background-color: #0C0F14;}
 
 .navbar{
-    background-color: #46211A;
+    background-color: #7B2A27;
 }
 
-@keyframes waves {
-    0% {
-        -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-        transform: translateX(0);
-    }
-    50% {
-        -webkit-transform: translateX(-10%);
-        -ms-transform: translateX(-10%);
-        transform: translateX(-10%);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-        transform: translateX(0);
-    }
+.navbar-toggler span{
+    color: #0C0F14;
 }
-.spot {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
+
 /*
     This is the outer svg wrapper that the SVG itself will
     fill. Multiple svg-wrapper classes can be put side by side.
@@ -64,7 +40,7 @@ h1.heading1 { font-size: 36px; font-weight: 800; text-align: center; margin-top:
 #shape {
     stroke-width: 6px;
     fill: transparent;
-    stroke: #BA5536;
+    stroke: #0C0F14;
     stroke-dasharray: 85 400;
     stroke-dashoffset: -220;
     transition: 1s all ease;
@@ -80,7 +56,7 @@ h1.heading1 { font-size: 36px; font-weight: 800; text-align: center; margin-top:
 }
 
 #text a {
-    color: #BA5536;
+    color: #0C0F14;
     text-decoration: none;
     font-weight: 100;
     font-size: 1.1em;
@@ -94,5 +70,5 @@ make it thinner, then set it to again wrap around the entire parent element.
     stroke-dasharray: 50 0;
     stroke-width: 3px;
     stroke-dashoffset: 0;
-    stroke: #BA5536;
+    stroke: #0C0F14;
 }

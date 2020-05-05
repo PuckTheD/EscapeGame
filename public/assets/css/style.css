@@ -7,6 +7,95 @@ body {
     color: #0C0F14;
 }
 
+hr {
+    border: 0 solid #0C0F14;
+    border-top-width: 1px;
+    height: 0;
+    margin: 60px auto;
+    clear: both;
+    display: block;
+    width: 400px;
+    position: relative;
+}
+hr:before {
+    content: " ";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #0C0F14;
+    background-color: #0C0F14;
+}
+hr:before {
+    left: 0;
+    bottom: -3px;
+    box-shadow: 400px 0 0 -1px #0C0F14, 400px 0 0 0 #0C0F14;
+}
+hr:after {
+    content:"";
+    background-image: url(../../images/serrure.jpg);
+    background-size: cover;
+    background-position: center;
+    display:block;
+    position:absolute;
+    left:50%;
+    height:50px;
+    width:50px;
+    margin:-25px 0 0 -25px;
+    border-radius:50px;
+    overflow:hidden;
+    box-shadow: 0 0 0 1px #0C0F14, 0 0 5px;
+}
+
+hr {transform:scale(2)}
+
+.missions{
+    margin-top: 25px;
+    color: #7B2A27;
+    font-weight: 800;
+    border-bottom: #7B2A27 4px solid;
+    width: 30%;
+}
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: inline-flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+    width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active,
+.carousel-inner>.row-equal.next,
+.carousel-inner>.row-equal.prev {
+    display: inline-flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left,
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: inline-flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+
+.card .btn{
+    background-color: #7B2A27;
+    color: white;
+}
+.card .btn:hover{
+    background-color: #0C0F14;
+}
+
 .jumbotron {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -92,7 +181,7 @@ body {
     stroke-width: 6px;
     fill: transparent;
     stroke: #0C0F14;
-    stroke-dasharray: 85 400;
+    stroke-dasharray: 85, 400;
     stroke-dashoffset: -220;
     transition: 1s all ease;
 }
@@ -120,7 +209,7 @@ make it thinner, then set it to again wrap around the entire parent element.
 */
 
 .svg-wrapper:hover #shape {
-    stroke-dasharray: 50 0;
+    stroke-dasharray: 50, 0;
     stroke-width: 3px;
     stroke-dashoffset: 0;
     stroke: #0C0F14;
@@ -163,4 +252,115 @@ make it thinner, then set it to again wrap around the entire parent element.
 
 #login-dp .btn:hover, .jumbotron .btn:focus, .jumbotron .btn.active {
     background-color: #0C0F14;
+}
+
+/*footer*/
+body .footer {
+    z-index: 1;
+    --footer-background:#7B2A27;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+    margin-top: 150px;
+}
+body .footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    -webkit-filter: url("#blob");
+    filter: url("#blob");
+}
+body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+body .footer .content {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
+    padding: 2rem;
+    background: var(--footer-background);
+}
+body .footer .content a, body .footer .content p {
+    color: #F5F7FA;
+    text-decoration: none;
+}
+body .footer .content b {
+    color: white;
+}
+body .footer .content p {
+    margin: 0;
+    font-size: .75rem;
+}
+body .footer .content > div {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+body .footer .content > div > div {
+    margin: 0.25rem 0;
+}
+body .footer .content > div > div > * {
+    margin-right: .5rem;
+}
+body .footer .content > div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+}
+
+@-webkit-keyframes bubble-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+@-webkit-keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
 }

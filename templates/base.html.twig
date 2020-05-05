@@ -57,12 +57,42 @@
                         </div>
                     </li>
                     {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li class="nav-item right">
+                        <li class="nav-item right dropdown">
                             <div class="svg-wrapper">
-                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150"/>
+                                <svg height="40" width="155" xmlns="http://www.w3.org/2000/svg">
+                                    <rect id="shape" height="40" width="155"/>
                                     <div id="text">
-                                        <a href=""><span class="spot"></span>Connexion/Inscription</a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Connexion</b> <span class="caret spot"></span></a>
+                                        <ul id="login-dp" class="dropdown-menu">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="exampleInputEmail2">Adresse mail</label>
+                                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Adresse mail" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="exampleInputPassword2">Mot de passe</label>
+                                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Mot de passe" required>
+                                                                <div class="help-block text-right"><a href="" style="color: #F2F2F2;">Mot de passe oublié ?</a></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                            </div>
+                                                            <!--<div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox"> keep me logged-in
+                                                                </label>
+                                                            </div>-->
+                                                        </form>
+                                                    </div>
+                                                    <div class="bottom text-center">
+                                                        Pas encore inscrit ? <a href="#"><b style="color: #F2F2F2">Créez vous un compte</b></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </svg>
                             </div>

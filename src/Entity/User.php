@@ -5,11 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -19,19 +20,20 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
-    private $password;
+    private $roles = [];
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
-    private $nickname;
+    private $password;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -39,23 +41,18 @@ class User
     private $avatar;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $token;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Team")
      */
-    private $role;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Team", mappedBy="users")
-     */
-    private $users;
+    private $teams;
 
     public function __construct()
     {
-        $this->users = new ArrayCollection();
+        $this->teams = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -75,9 +72,41 @@ class User
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->password;
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
@@ -87,16 +116,21 @@ class User
         return $this;
     }
 
-    public function getNickname(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
     {
-        return $this->nickname;
+        // not needed when using the "bcrypt" algorithm in security.yaml
     }
 
-    public function setNickname(string $nickname): self
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
     {
-        $this->nickname = $nickname;
-
-        return $this;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getAvatar(): ?string
@@ -116,21 +150,9 @@ class User
         return $this->token;
     }
 
-    public function setToken(?string $token): self
+    public function setToken(string $token): self
     {
         $this->token = $token;
-
-        return $this;
-    }
-
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(?string $role): self
-    {
-        $this->role = $role;
 
         return $this;
     }
@@ -138,26 +160,24 @@ class User
     /**
      * @return Collection|Team[]
      */
-    public function getUsers(): Collection
+    public function getTeams(): Collection
     {
-        return $this->users;
+        return $this->teams;
     }
 
-    public function addUser(Team $user): self
+    public function addTeam(Team $team): self
     {
-        if (!$this->users->contains($user)) {
-            $this->users[] = $user;
-            $user->addUser($this);
+        if (!$this->teams->contains($team)) {
+            $this->teams[] = $team;
         }
 
         return $this;
     }
 
-    public function removeUser(Team $user): self
+    public function removeTeam(Team $team): self
     {
-        if ($this->users->contains($user)) {
-            $this->users->removeElement($user);
-            $user->removeUser($this);
+        if ($this->teams->contains($team)) {
+            $this->teams->removeElement($team);
         }
 
         return $this;

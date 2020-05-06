@@ -101,7 +101,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="bottom text-center">
-                                                        Pas encore inscrit ? <a href="#"><b style="color: #F2F2F2">Créez
+                                                        Pas encore inscrit ? <a href="{{ path('user_new') }}"><b style="color: #F2F2F2">Créez
                                                                 vous un compte</b></a>
                                                     </div>
                                                 </div>
@@ -118,7 +118,17 @@
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                     <rect id="shape" height="40" width="150"/>
                                     <div id="text">
-                                        <a href=""><span class="spot"></span>Se déconnecter</a>
+                                        <a href="{{ path ('user_show') }}"><span class="spot"></span>Votre profil</a>
+                                    </div>
+                                </svg>
+                            </div><!-- à ne faire apparaître que si connecté-->
+                        </li>
+                        <li class="nav-item right">
+                            <div class="svg-wrapper">
+                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                                    <rect id="shape" height="40" width="150"/>
+                                    <div id="text">
+                                        <a href="{{ path ('app_logout') }}"><span class="spot"></span>Se déconnecter</a>
                                     </div>
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
@@ -131,6 +141,7 @@
 </header>
 
 <body>
+<button id="myBtn" title="Go to top"><i class="fas fa-arrow-circle-up"></i></button>
 {% block body %}{% endblock %}
 
 <footer>

@@ -49,22 +49,26 @@ hr:after {
 
 hr {transform:scale(2)}
 
-.missions{
+.adventures{
     margin-top: 25px;
     color: #7B2A27;
     font-weight: 800;
     border-bottom: #7B2A27 4px solid;
-    width: 30%;
+    border-top: #7B2A27 4px solid;
 }
 
 /* equal card height */
 .row-equal > div[class*='col-'] {
     display: inline-flex;
-    flex: 1 0 auto;
+    flex: auto;
 }
 
 .row-equal .card {
     width: 100%;
+}
+
+.carousel-item-next, .carousel-item-prev{
+    display: inline-flex;
 }
 
 /* ensure equal card height inside carousel */
@@ -72,6 +76,7 @@ hr {transform:scale(2)}
 .carousel-inner>.row-equal.next,
 .carousel-inner>.row-equal.prev {
     display: inline-flex;
+    flex: auto;
 }
 
 /* prevent flicker during transition */
@@ -167,8 +172,8 @@ hr {transform:scale(2)}
     height: 40px;
     display: inline-block;
     border-radius: 3px;
-    margin-left: 2px;
-    margin-right: 2px
+    margin-left: 5px;
+    margin-right: 5px
 }
 
 /*
@@ -200,8 +205,8 @@ hr {transform:scale(2)}
 #text a {
     color: #0C0F14;
     text-decoration: none;
-    font-weight: 100;
-    font-size: 1.1em;
+    font-weight: 500;
+    font-size: 1.3em;
 }
 
 /*

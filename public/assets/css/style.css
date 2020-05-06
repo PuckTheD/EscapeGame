@@ -13,9 +13,9 @@ body {
     bottom: 20px; /* Place the button at the bottom of the page */
     right: 30px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
+    border: 2px solid #0C0F14; /* borders */
     outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
+    background-color: #7B2A27; /* Set a background color */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
@@ -24,7 +24,7 @@ body {
 }
 
 #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    background-color: #0C0F14; /* Add a dark-grey background on hover */
 }
 
 hr {

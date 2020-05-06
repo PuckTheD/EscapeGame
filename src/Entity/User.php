@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -38,22 +36,22 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
+    private $nickname;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $avatar;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json", nullable=true)
      */
-    private $token;
+    private $role = [];
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Team")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $teams;
-
-    public function __construct()
-    {
-        $this->teams = new ArrayCollection();
-    }
+    private $token;
 
     public function getId(): ?int
     {
@@ -133,6 +131,18 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
+    public function getNickname(): ?string
+    {
+        return $this->nickname;
+    }
+
+    public function setNickname(?string $nickname): self
+    {
+        $this->nickname = $nickname;
+
+        return $this;
+    }
+
     public function getAvatar(): ?string
     {
         return $this->avatar;
@@ -145,40 +155,26 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getRole(): ?array
+    {
+        return $this->role;
+    }
+
+    public function setRole(?array $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
     public function getToken(): ?string
     {
         return $this->token;
     }
 
-    public function setToken(string $token): self
+    public function setToken(?string $token): self
     {
         $this->token = $token;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Team[]
-     */
-    public function getTeams(): Collection
-    {
-        return $this->teams;
-    }
-
-    public function addTeam(Team $team): self
-    {
-        if (!$this->teams->contains($team)) {
-            $this->teams[] = $team;
-        }
-
-        return $this;
-    }
-
-    public function removeTeam(Team $team): self
-    {
-        if ($this->teams->contains($team)) {
-            $this->teams->removeElement($team);
-        }
 
         return $this;
     }

@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 // When the user clicks on the button, scroll to the top of the document
-    $("myBtn").onclick = function goToTop() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        console.log("Ok");
-    }
+    $('#myBtn').click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
 });

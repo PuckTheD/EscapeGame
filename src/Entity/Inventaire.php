@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProgressionRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\InventaireRepository")
  */
-class Progression
+class Inventaire
 {
     /**
      * @ORM\Id()
@@ -19,17 +19,17 @@ class Progression
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $progress;
+    private $indice_id;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $scenario_team_id;
+    private $user_id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="progressions")
+     * @ORM\ManyToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="inventaires")
      */
     private $scenarioTeams;
 
@@ -43,26 +43,26 @@ class Progression
         return $this->id;
     }
 
-    public function getProgress(): ?string
+    public function getIndiceId(): ?int
     {
-        return $this->progress;
+        return $this->indice_id;
     }
 
-    public function setProgress(?string $progress): self
+    public function setIndiceId(?int $indice_id): self
     {
-        $this->progress = $progress;
+        $this->indice_id = $indice_id;
 
         return $this;
     }
 
-    public function getScenarioTeamId(): ?int
+    public function getUserId(): ?int
     {
-        return $this->scenario_team_id;
+        return $this->user_id;
     }
 
-    public function setScenarioTeamId(?int $scenario_team_id): self
+    public function setUserId(?int $user_id): self
     {
-        $this->scenario_team_id = $scenario_team_id;
+        $this->user_id = $user_id;
 
         return $this;
     }
@@ -79,7 +79,7 @@ class Progression
     {
         if (!$this->scenarioTeams->contains($scenarioTeam)) {
             $this->scenarioTeams[] = $scenarioTeam;
-            $scenarioTeam->addProgression($this);
+            $scenarioTeam->addInventaire($this);
         }
 
         return $this;
@@ -89,7 +89,7 @@ class Progression
     {
         if ($this->scenarioTeams->contains($scenarioTeam)) {
             $this->scenarioTeams->removeElement($scenarioTeam);
-            $scenarioTeam->removeProgression($this);
+            $scenarioTeam->removeInventaire($this);
         }
 
         return $this;

@@ -19,24 +19,23 @@ class Team
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="users")
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $users;
+    private $user_id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Scenario", mappedBy="teams")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="teams")
      */
-    private $scenarios;
+    private $users;
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
-        $this->scenarios = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -49,9 +48,21 @@ class Team
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?int $user_id): self
+    {
+        $this->user_id = $user_id;
 
         return $this;
     }
@@ -68,6 +79,7 @@ class Team
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
+            $user->addTeam($this);
         }
 
         return $this;
@@ -77,34 +89,7 @@ class Team
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Scenario[]
-     */
-    public function getScenarios(): Collection
-    {
-        return $this->scenarios;
-    }
-
-    public function addScenario(Scenario $scenario): self
-    {
-        if (!$this->scenarios->contains($scenario)) {
-            $this->scenarios[] = $scenario;
-            $scenario->addTeam($this);
-        }
-
-        return $this;
-    }
-
-    public function removeScenario(Scenario $scenario): self
-    {
-        if ($this->scenarios->contains($scenario)) {
-            $this->scenarios->removeElement($scenario);
-            $scenario->removeTeam($this);
+            $user->removeTeam($this);
         }
 
         return $this;

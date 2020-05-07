@@ -46,17 +46,17 @@ class User implements UserInterface
     private $avatar;
 
     /**
-     * @ORM\Column(type="json", nullable=true)
-     */
-    private $role = [];
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $token;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Team", inversedBy="users")
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $role;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Team", mappedBy="users")
      */
     private $teams;
 
@@ -167,18 +167,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRole(): ?array
-    {
-        return $this->role;
-    }
-
-    public function setRole(?array $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
     public function getToken(): ?string
     {
         return $this->token;
@@ -187,6 +175,18 @@ class User implements UserInterface
     public function setToken(?string $token): self
     {
         $this->token = $token;
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(?string $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }
@@ -203,6 +203,7 @@ class User implements UserInterface
     {
         if (!$this->teams->contains($team)) {
             $this->teams[] = $team;
+            $team->addUser($this);
         }
 
         return $this;
@@ -212,6 +213,7 @@ class User implements UserInterface
     {
         if ($this->teams->contains($team)) {
             $this->teams->removeElement($team);
+            $team->removeUser($this);
         }
 
         return $this;

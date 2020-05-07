@@ -24,12 +24,7 @@ class Team
     private $name;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $user_id;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="teams")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="teams")
      */
     private $users;
 
@@ -55,18 +50,6 @@ class Team
         return $this;
     }
 
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(?int $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
-
     /**
      * @return Collection|User[]
      */
@@ -79,7 +62,6 @@ class Team
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
-            $user->addTeam($this);
         }
 
         return $this;
@@ -89,7 +71,6 @@ class Team
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
-            $user->removeTeam($this);
         }
 
         return $this;

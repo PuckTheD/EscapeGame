@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScenarioTeam{% endblock %}
+
+{% block body %}
+    <h1>ScenarioTeam</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ scenario_team.id }}</td>
+            </tr>
+            <tr>
+                <th>Scenario_id</th>
+                <td>{{ scenario_team.scenarioId }}</td>
+            </tr>
+            <tr>
+                <th>Team_id</th>
+                <td>{{ scenario_team.teamId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('scenario_team_index') }}">back to list</a>
+
+    <a href="{{ path('scenario_team_edit', {'id': scenario_team.id}) }}">edit</a>
+
+    {{ include('scenario_team/_delete_form.html.twig') }}
+{% endblock %}

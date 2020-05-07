@@ -19,7 +19,7 @@ class Scenario
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $themathique;
 
@@ -33,20 +33,21 @@ class Scenario
      */
     private $duree;
 
+    
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Team", inversedBy="scenarios")
+     * @ORM\OneToMany(targetEntity="App\Entity\Thematique", mappedBy="themes")
      */
-    private $teams;
+    private $themathiques;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Themathique", mappedBy="scenario_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Indice", mappedBy="indices")
      */
-    private $thematiques;
+    private $indices;
 
     public function __construct()
     {
-        $this->teams = new ArrayCollection();
-        $this->thematiques = new ArrayCollection();
+        $this->indices = new ArrayCollection();
+        $this->themathiques = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -59,7 +60,7 @@ class Scenario
         return $this->themathique;
     }
 
-    public function setThemathique(string $themathique): self
+    public function setThemathique(?string $themathique): self
     {
         $this->themathique = $themathique;
 
@@ -91,56 +92,61 @@ class Scenario
     }
 
     /**
-     * @return Collection|Team[]
+     * @return Collection|Indice[]
      */
-    public function getTeams(): Collection
+    public function getIndices(): Collection
     {
-        return $this->teams;
+        return $this->indices;
     }
 
-    public function addTeam(Team $team): self
+    public function addIndex(Indice $index): self
     {
-        if (!$this->teams->contains($team)) {
-            $this->teams[] = $team;
+        if (!$this->indices->contains($index)) {
+            $this->indices[] = $index;
+            $index->setScenario($this);
         }
 
         return $this;
     }
 
-    public function removeTeam(Team $team): self
+    public function removeIndex(Indice $index): self
     {
-        if ($this->teams->contains($team)) {
-            $this->teams->removeElement($team);
+        if ($this->indices->contains($index)) {
+            $this->indices->removeElement($index);
+            // set the owning side to null (unless already changed)
+            if ($index->getScenario() === $this) {
+                $index->setScenario(null);
+            }
         }
 
         return $this;
     }
 
     /**
-     * @return Collection|Themathique[]
+     * @return Collection|Thematique[]
      */
-    public function getThematiques(): Collection
+    public function getThemathiques(): Collection
     {
-        return $this->thematiques;
+        return $this->themathiques;
     }
 
-    public function addThematique(Themathique $thematique): self
+    public function addThemathique(Thematique $themathique): self
     {
-        if (!$this->thematiques->contains($thematique)) {
-            $this->thematiques[] = $thematique;
-            $thematique->setScenarioId($this);
+        if (!$this->themathiques->contains($themathique)) {
+            $this->themathiques[] = $themathique;
+            $themathique->setThemes($this);
         }
 
         return $this;
     }
 
-    public function removeThematique(Themathique $thematique): self
+    public function removeThemathique(Thematique $themathique): self
     {
-        if ($this->thematiques->contains($thematique)) {
-            $this->thematiques->removeElement($thematique);
+        if ($this->themathiques->contains($themathique)) {
+            $this->themathiques->removeElement($themathique);
             // set the owning side to null (unless already changed)
-            if ($thematique->getScenarioId() === $this) {
-                $thematique->setScenarioId(null);
+            if ($themathique->getThemes() === $this) {
+                $themathique->setThemes(null);
             }
         }
 

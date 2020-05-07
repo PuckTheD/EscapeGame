@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScenarioTeam index{% endblock %}
+
+{% block body %}
+    <h1>ScenarioTeam index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Scenario_id</th>
+                <th>Team_id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for scenario_team in scenario_teams %}
+            <tr>
+                <td>{{ scenario_team.id }}</td>
+                <td>{{ scenario_team.scenarioId }}</td>
+                <td>{{ scenario_team.teamId }}</td>
+                <td>
+                    <a href="{{ path('scenario_team_show', {'id': scenario_team.id}) }}">show</a>
+                    <a href="{{ path('scenario_team_edit', {'id': scenario_team.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('scenario_team_new') }}">Create new</a>
+{% endblock %}

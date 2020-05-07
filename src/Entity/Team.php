@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TeamRepository")
+ * @ORM\Entity(repositoryClass=TeamRepository::class)
  */
 class Team
 {
@@ -24,19 +25,13 @@ class Team
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="users")
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="teams")
      */
     private $users;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Scenario", mappedBy="teams")
-     */
-    private $scenarios;
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
-        $this->scenarios = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -68,6 +63,7 @@ class Team
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
+            $user->addTeam($this);
         }
 
         return $this;
@@ -77,34 +73,7 @@ class Team
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Scenario[]
-     */
-    public function getScenarios(): Collection
-    {
-        return $this->scenarios;
-    }
-
-    public function addScenario(Scenario $scenario): self
-    {
-        if (!$this->scenarios->contains($scenario)) {
-            $this->scenarios[] = $scenario;
-            $scenario->addTeam($this);
-        }
-
-        return $this;
-    }
-
-    public function removeScenario(Scenario $scenario): self
-    {
-        if ($this->scenarios->contains($scenario)) {
-            $this->scenarios->removeElement($scenario);
-            $scenario->removeTeam($this);
+            $user->removeTeam($this);
         }
 
         return $this;

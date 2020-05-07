@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
+use App\Entity\Team;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User implements UserInterface
 {
@@ -36,7 +39,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $nickname;
 
@@ -46,17 +49,12 @@ class User implements UserInterface
     private $avatar;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $token;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $role;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Team", mappedBy="users")
+     * @ORM\ManyToMany(targetEntity=Team::class, inversedBy="users")
      */
     private $teams;
 
@@ -148,7 +146,7 @@ class User implements UserInterface
         return $this->nickname;
     }
 
-    public function setNickname(?string $nickname): self
+    public function setNickname(string $nickname): self
     {
         $this->nickname = $nickname;
 
@@ -179,18 +177,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(?string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Team[]
      */
@@ -203,7 +189,6 @@ class User implements UserInterface
     {
         if (!$this->teams->contains($team)) {
             $this->teams[] = $team;
-            $team->addUser($this);
         }
 
         return $this;
@@ -213,7 +198,6 @@ class User implements UserInterface
     {
         if ($this->teams->contains($team)) {
             $this->teams->removeElement($team);
-            $team->removeUser($this);
         }
 
         return $this;

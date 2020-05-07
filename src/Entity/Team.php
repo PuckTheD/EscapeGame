@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TeamRepository")
+ * @ORM\Entity(repositoryClass=TeamRepository::class)
  */
 class Team
 {
@@ -19,12 +20,12 @@ class Team
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="teams")
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="teams")
      */
     private $users;
 
@@ -43,7 +44,7 @@ class Team
         return $this->name;
     }
 
-    public function setName(?string $name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -62,6 +63,7 @@ class Team
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
+            $user->addTeam($this);
         }
 
         return $this;
@@ -71,6 +73,7 @@ class Team
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
+            $user->removeTeam($this);
         }
 
         return $this;

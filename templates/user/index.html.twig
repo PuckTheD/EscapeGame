@@ -14,7 +14,6 @@
                 <th>Password</th>
                 <th>Nickname</th>
                 <th>Avatar</th>
-                <th>Role</th>
                 <th>Token</th>
                 <th>actions</th>
             </tr>
@@ -28,7 +27,6 @@
                 <td>{{ user.password }}</td>
                 <td>{{ user.nickname }}</td>
                 <td>{{ user.avatar }}</td>
-                <td>{{ user.role ? user.role|json_encode : '' }}</td>
                 <td>{{ user.token }}</td>
                 <td>
                     <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
@@ -37,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="8">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -23,11 +23,7 @@ class Progression
      */
     private $progress;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $scenario_team_id;
-
+   
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="progressions")
      */
@@ -51,18 +47,6 @@ class Progression
     public function setProgress(?string $progress): self
     {
         $this->progress = $progress;
-
-        return $this;
-    }
-
-    public function getScenarioTeamId(): ?int
-    {
-        return $this->scenario_team_id;
-    }
-
-    public function setScenarioTeamId(?int $scenario_team_id): self
-    {
-        $this->scenario_team_id = $scenario_team_id;
 
         return $this;
     }

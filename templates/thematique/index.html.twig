@@ -9,8 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Scenario</th>
-                <th>Scenario_id</th>
+                <th>Nom</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,8 +17,7 @@
         {% for thematique in thematiques %}
             <tr>
                 <td>{{ thematique.id }}</td>
-                <td>{{ thematique.scenario }}</td>
-                <td>{{ thematique.scenarioId }}</td>
+                <td>{{ thematique.name }}</td>
                 <td>
                     <a href="{{ path('thematique_show', {'id': thematique.id}) }}">show</a>
                     <a href="{{ path('thematique_edit', {'id': thematique.id}) }}">edit</a>

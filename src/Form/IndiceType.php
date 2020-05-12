@@ -14,7 +14,6 @@ class IndiceType extends AbstractType
         $builder
             ->add('hint')
             ->add('scenario_id')
-            ->add('indices')
         ;
     }
 

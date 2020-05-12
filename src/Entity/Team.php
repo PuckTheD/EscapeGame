@@ -25,13 +25,26 @@ class Team
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="teams")
+     * @ORM\Column(type="string", length=255)
+     */
+    private $leader;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="team", orphanRemoval=true)
+     */
+    private $scenarioTeams;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="teams")
      */
     private $users;
+
+    
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->scenarioTeams = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,6 +64,49 @@ class Team
         return $this;
     }
 
+    public function getLeader(): ?string
+    {
+        return $this->leader;
+    }
+
+    public function setLeader(string $leader): self
+    {
+        $this->leader = $leader;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ScenarioTeam[]
+     */
+    public function getScenarioTeams(): Collection
+    {
+        return $this->scenarioTeams;
+    }
+
+    public function addScenarioTeam(ScenarioTeam $scenarioTeam): self
+    {
+        if (!$this->scenarioTeams->contains($scenarioTeam)) {
+            $this->scenarioTeams[] = $scenarioTeam;
+            $scenarioTeam->setTeam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScenarioTeam(ScenarioTeam $scenarioTeam): self
+    {
+        if ($this->scenarioTeams->contains($scenarioTeam)) {
+            $this->scenarioTeams->removeElement($scenarioTeam);
+            // set the owning side to null (unless already changed)
+            if ($scenarioTeam->getTeam() === $this) {
+                $scenarioTeam->setTeam(null);
+            }
+        }
+
+        return $this;
+    }
+
     /**
      * @return Collection|User[]
      */
@@ -63,7 +119,6 @@ class Team
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
-            $user->addTeam($this);
         }
 
         return $this;
@@ -73,9 +128,10 @@ class Team
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
-            $user->removeTeam($this);
         }
 
         return $this;
     }
+
+   
 }

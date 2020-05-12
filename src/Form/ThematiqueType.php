@@ -12,9 +12,7 @@ class ThematiqueType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('scenario')
-            ->add('scenario_id')
-            ->add('themes')
+            ->add('name')
         ;
     }
 

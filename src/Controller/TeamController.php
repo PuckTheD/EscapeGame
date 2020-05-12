@@ -31,7 +31,7 @@ class TeamController extends AbstractController
     public function new(Request $request): Response
     {
         $team = new Team();
-        $form = $this->createForm(Team1Type::class, $team);
+        $form = $this->createForm(TeamType::class, $team);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -31,13 +31,7 @@ class UserType extends AbstractType
             )
             ->add('nickname')
             ->add('avatar')
-            ->add('token')
-            ->add('teams', EntityType::class, array(
-                'class'        => Team::class,
-                'choice_label' => 'name',
-                'multiple'    => true,
-                'expanded'    => true,
-            ))
+            
         ;
     }
 

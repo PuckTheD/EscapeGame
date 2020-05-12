@@ -19,77 +19,96 @@ class Scenario
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $themathique;
+    private $name;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="text")
      */
-    private $nb_jour;
+    private $description;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $duree;
+    private $image;
 
-    
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Thematique", mappedBy="themes")
+     * @ORM\Column(type="boolean")
      */
-    private $themathiques;
+    private $multi_player;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Indice", mappedBy="indices")
      */
     private $indices;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="scenario", orphanRemoval=true)
+     */
+    private $scenarioTeams;
+
+   
+
     public function __construct()
     {
         $this->indices = new ArrayCollection();
-        $this->themathiques = new ArrayCollection();
+        $this->scenarioTeams = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
-    public function getThemathique(): ?string
+    public function getName(): ?string
     {
-        return $this->themathique;
+        return $this->name;
     }
 
-    public function setThemathique(?string $themathique): self
+    public function setName(string $name): self
     {
-        $this->themathique = $themathique;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getNbJour(): ?int
+    public function getDescription(): ?string
     {
-        return $this->nb_jour;
+        return $this->description;
     }
 
-    public function setNbJour(?int $nb_jour): self
+    public function setDescription(string $description): self
     {
-        $this->nb_jour = $nb_jour;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getDuree(): ?\DateTimeInterface
+    public function getImage(): ?string
     {
-        return $this->duree;
+        return $this->image;
     }
 
-    public function setDuree(?\DateTimeInterface $duree): self
+    public function setImage(string $image): self
     {
-        $this->duree = $duree;
+        $this->image = $image;
 
         return $this;
     }
+
+    public function getMultiPlayer(): ?bool
+    {
+        return $this->multi_player;
+    }
+
+    public function setMultiPlayer(bool $multi_player): self
+    {
+        $this->multi_player = $multi_player;
+
+        return $this;
+    }
+
+
 
     /**
      * @return Collection|Indice[]
@@ -122,34 +141,38 @@ class Scenario
         return $this;
     }
 
+
     /**
-     * @return Collection|Thematique[]
+     * @return Collection|ScenarioTeam[]
      */
-    public function getThemathiques(): Collection
+    public function getScenarioTeams(): Collection
     {
-        return $this->themathiques;
+        return $this->scenarioTeams;
     }
 
-    public function addThemathique(Thematique $themathique): self
+    public function addScenarioTeam(ScenarioTeam $scenarioTeam): self
     {
-        if (!$this->themathiques->contains($themathique)) {
-            $this->themathiques[] = $themathique;
-            $themathique->setThemes($this);
+        if (!$this->scenarioTeams->contains($scenarioTeam)) {
+            $this->scenarioTeams[] = $scenarioTeam;
+            $scenarioTeam->setScenario($this);
         }
 
         return $this;
     }
 
-    public function removeThemathique(Thematique $themathique): self
+    public function removeScenarioTeam(ScenarioTeam $scenarioTeam): self
     {
-        if ($this->themathiques->contains($themathique)) {
-            $this->themathiques->removeElement($themathique);
+        if ($this->scenarioTeams->contains($scenarioTeam)) {
+            $this->scenarioTeams->removeElement($scenarioTeam);
             // set the owning side to null (unless already changed)
-            if ($themathique->getThemes() === $this) {
-                $themathique->setThemes(null);
+            if ($scenarioTeam->getScenario() === $this) {
+                $scenarioTeam->setScenario(null);
             }
         }
 
         return $this;
     }
+
+
+
 }

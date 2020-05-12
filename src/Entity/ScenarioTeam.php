@@ -19,14 +19,9 @@ class ScenarioTeam
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="datetime")
      */
-    private $scenario_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $team_id;
+    private $started_at;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Progression", inversedBy="scenarioTeams")
@@ -38,8 +33,22 @@ class ScenarioTeam
      */
     private $inventaires;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Team", inversedBy="scenarioTeams")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $team;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Scenario", inversedBy="scenarioTeams")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $scenario;
+
+
     public function __construct()
     {
+        $this->started_at = new \DateTime();
         $this->progressions = new ArrayCollection();
         $this->inventaires = new ArrayCollection();
     }
@@ -49,30 +58,18 @@ class ScenarioTeam
         return $this->id;
     }
 
-    public function getScenarioId(): ?int
+    public function getStartedAt(): ?\DateTimeInterface
     {
-        return $this->scenario_id;
+        return $this->started_at;
     }
 
-    public function setScenarioId(int $scenario_id): self
+    public function setStartedAt(\DateTimeInterface $started_at): self
     {
-        $this->scenario_id = $scenario_id;
+        $this->started_at = $started_at;
 
         return $this;
     }
-
-    public function getTeamId(): ?int
-    {
-        return $this->team_id;
-    }
-
-    public function setTeamId(int $team_id): self
-    {
-        $this->team_id = $team_id;
-
-        return $this;
-    }
-
+    
     /**
      * @return Collection|Progression[]
      */
@@ -121,6 +118,30 @@ class ScenarioTeam
         if ($this->inventaires->contains($inventaire)) {
             $this->inventaires->removeElement($inventaire);
         }
+
+        return $this;
+    }
+
+    public function getTeam(): ?Team
+    {
+        return $this->team;
+    }
+
+    public function setTeam(?Team $team): self
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+    public function getScenario(): ?Scenario
+    {
+        return $this->scenario;
+    }
+
+    public function setScenario(?Scenario $scenario): self
+    {
+        $this->scenario = $scenario;
 
         return $this;
     }

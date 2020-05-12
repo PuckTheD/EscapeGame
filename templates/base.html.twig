@@ -42,7 +42,7 @@
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150"/>
                                 <div id="text">
-                                    <a href="#adventures"><span class="spot"></span>Les aventures</a>
+                                    <a href="{{ path('homepage') }}#adventures"><span class="spot"></span>Les aventures</a>
                                 </div>
                             </svg>
                         </div>
@@ -72,23 +72,22 @@
                                                         <form class="form" role="form" method="post" action="login"
                                                               accept-charset="UTF-8" id="login-nav">
                                                             <div class="form-group">
-                                                                <label class="sr-only" for="exampleInputEmail2">Adresse
+                                                                <label class="sr-only" for="inputEmail2">Adresse
                                                                     mail</label>
-                                                                <input type="email" class="form-control"
-                                                                       id="exampleInputEmail2"
-                                                                       placeholder="Adresse mail" required>
+                                                                <input type="email" value="" name="email" id="inputEmail2" class="form-control" placeholder="Adresse mail" required autofocus>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="sr-only" for="exampleInputPassword2">Mot
+                                                                <label class="sr-only" for="inputPassword2">Mot
                                                                     de passe</label>
-                                                                <input type="password" class="form-control"
-                                                                       id="exampleInputPassword2"
-                                                                       placeholder="Mot de passe" required>
+                                                                <input type="password" name="password" id="inputPassword2" class="form-control" placeholder="Mot de passe" required>
                                                                 <div class="help-block text-right"><a href=""
                                                                                                       style="color: #F2F2F2;">Mot
                                                                         de passe oublié ?</a></div>
                                                             </div>
                                                             <div class="form-group">
+                                                                <input type="hidden" name="_csrf_token"
+                                                                       value="{{ csrf_token('authenticate') }}"
+                                                                >
                                                                 <button type="submit" class="btn btn-primary btn-block">
                                                                     Se connecter
                                                                 </button>

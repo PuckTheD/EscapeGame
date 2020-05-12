@@ -29,9 +29,15 @@ class Team
      */
     private $users;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CurrentGame::class, mappedBy="teams")
+     */
+    private $currentGames;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->currentGames = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -74,6 +80,37 @@ class Team
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
             $user->removeTeam($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CurrentGame[]
+     */
+    public function getCurrentGames(): Collection
+    {
+        return $this->currentGames;
+    }
+
+    public function addCurrentGame(CurrentGame $currentGame): self
+    {
+        if (!$this->currentGames->contains($currentGame)) {
+            $this->currentGames[] = $currentGame;
+            $currentGame->setTeams($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCurrentGame(CurrentGame $currentGame): self
+    {
+        if ($this->currentGames->contains($currentGame)) {
+            $this->currentGames->removeElement($currentGame);
+            // set the owning side to null (unless already changed)
+            if ($currentGame->getTeams() === $this) {
+                $currentGame->setTeams(null);
+            }
         }
 
         return $this;

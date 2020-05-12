@@ -40,15 +40,18 @@ class Scenario
     private $indices;
 
     /**
-     * @ORM\OneToMany(targetEntity=ScenarioTeam::class, mappedBy="scenarios")
+     * @ORM\ManyToMany(targetEntity=CurrentGame::class, mappedBy="scenarios")
      */
-    private $scenarioTeams;
+    private $currentGames;
+
+    
 
     public function __construct()
     {
         $this->thematiques = new ArrayCollection();
         $this->indices = new ArrayCollection();
-        $this->scenarioTeams = new ArrayCollection();
+        $this->currentGames = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -133,33 +136,31 @@ class Scenario
     }
 
     /**
-     * @return Collection|ScenarioTeam[]
+     * @return Collection|CurrentGame[]
      */
-    public function getScenarioTeams(): Collection
+    public function getCurrentGames(): Collection
     {
-        return $this->scenarioTeams;
+        return $this->currentGames;
     }
 
-    public function addScenarioTeam(ScenarioTeam $scenarioTeam): self
+    public function addCurrentGame(CurrentGame $currentGame): self
     {
-        if (!$this->scenarioTeams->contains($scenarioTeam)) {
-            $this->scenarioTeams[] = $scenarioTeam;
-            $scenarioTeam->setScenarios($this);
+        if (!$this->currentGames->contains($currentGame)) {
+            $this->currentGames[] = $currentGame;
+            $currentGame->addScenario($this);
         }
 
         return $this;
     }
 
-    public function removeScenarioTeam(ScenarioTeam $scenarioTeam): self
+    public function removeCurrentGame(CurrentGame $currentGame): self
     {
-        if ($this->scenarioTeams->contains($scenarioTeam)) {
-            $this->scenarioTeams->removeElement($scenarioTeam);
-            // set the owning side to null (unless already changed)
-            if ($scenarioTeam->getScenarios() === $this) {
-                $scenarioTeam->setScenarios(null);
-            }
+        if ($this->currentGames->contains($currentGame)) {
+            $this->currentGames->removeElement($currentGame);
+            $currentGame->removeScenario($this);
         }
 
         return $this;
     }
+
 }

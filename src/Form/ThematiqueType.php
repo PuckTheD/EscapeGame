@@ -3,9 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Thematique;
+use App\Entity\Scenario;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ThematiqueType extends AbstractType
 {
@@ -14,7 +17,12 @@ class ThematiqueType extends AbstractType
         $builder
             ->add('titre')
             ->add('theme')
-            ->add('scenarios')
+            ->add('scenarios', EntityType::class, array(
+                'class'        => Scenario::class,
+                'choice_label' => 'id',
+                'multiple'    => true,
+                'expanded'    => true,
+                ))    
         ;
     }
 

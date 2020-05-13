@@ -117,7 +117,7 @@
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                     <rect id="shape" height="40" width="150"/>
                                     <div id="text">
-                                        <a href="#"><span class="spot"></span>Votre profil</a>
+                                        <a href="{{ path('user_show', {'id':app.user.id})}}"><span class="spot"></span>Votre profil</a>
                                     </div>
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->

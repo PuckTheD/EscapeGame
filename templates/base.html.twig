@@ -32,7 +32,7 @@
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150"/>
                                 <div id="text">
-                                    <a href=""><span class="spot"></span>Accueil</a>
+                                    <a href="{{ path('homepage') }}"><span class="spot"></span>Accueil</a>
                                 </div>
                             </svg>
                         </div>
@@ -42,7 +42,7 @@
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150"/>
                                 <div id="text">
-                                    <a href="#adventures"><span class="spot"></span>Les aventures</a>
+                                    <a href="{{ path('homepage') }}#adventures"><span class="spot"></span>Les aventures</a>
                                 </div>
                             </svg>
                         </div>
@@ -72,23 +72,22 @@
                                                         <form class="form" role="form" method="post" action="login"
                                                               accept-charset="UTF-8" id="login-nav">
                                                             <div class="form-group">
-                                                                <label class="sr-only" for="exampleInputEmail2">Adresse
+                                                                <label class="sr-only" for="inputEmail2">Adresse
                                                                     mail</label>
-                                                                <input type="email" class="form-control"
-                                                                       id="exampleInputEmail2"
-                                                                       placeholder="Adresse mail" required>
+                                                                <input type="email" value="" name="email" id="inputEmail2" class="form-control" placeholder="Adresse mail" required autofocus>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="sr-only" for="exampleInputPassword2">Mot
+                                                                <label class="sr-only" for="inputPassword2">Mot
                                                                     de passe</label>
-                                                                <input type="password" class="form-control"
-                                                                       id="exampleInputPassword2"
-                                                                       placeholder="Mot de passe" required>
+                                                                <input type="password" name="password" id="inputPassword2" class="form-control" placeholder="Mot de passe" required>
                                                                 <div class="help-block text-right"><a href=""
                                                                                                       style="color: #F2F2F2;">Mot
                                                                         de passe oublié ?</a></div>
                                                             </div>
                                                             <div class="form-group">
+                                                                <input type="hidden" name="_csrf_token"
+                                                                       value="{{ csrf_token('authenticate') }}"
+                                                                >
                                                                 <button type="submit" class="btn btn-primary btn-block">
                                                                     Se connecter
                                                                 </button>
@@ -118,7 +117,7 @@
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                     <rect id="shape" height="40" width="150"/>
                                     <div id="text">
-                                        <a href="{{ path ('user_show') }}"><span class="spot"></span>Votre profil</a>
+                                        <a href="{{ path('user_show', {'id':app.user.id})}}"><span class="spot"></span>Votre profil</a>
                                     </div>
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
@@ -147,7 +146,7 @@
 <footer>
     <div class="main"></div>
     <div class="footer">
-        <div class="bubbles">
+    <div class="bubbles">
             <div class="bubble"
                  style="--size:2.235501331400517rem; --distance:7.214520868796471rem; --position:49.741899556891354%; --time:2.0249610412192114s; --delay:-3.8753119822279296s;"></div>
             <div class="bubble"
@@ -405,6 +404,7 @@
             <div class="bubble"
                  style="--size:4.318523138555176rem; --distance:8.743673774741552rem; --position:94.19941842888139%; --time:2.2046447577468538s; --delay:-3.1860350176119954s;"></div>
         </div>
+        
         <div class="content">
             <div>
                 <div><b>Franck</b> spécialiste BDD et implants capillaires.</div>

@@ -1,20 +1,32 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Beyond Corp.{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset ('assets/css/beyond-style.css') }} ">
+    {% endblock %}
+</head>
 
-{% block title %}Hello BeyondController!{% endblock %}
+<header>
+   
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+</header>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<body>
+<button id="myBtn" title="Go to top"><i class="fas fa-arrow-circle-up"></i></button>
+{% block body %}{% endblock %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/EscapeGame/src/Controller/BeyondController.php'|file_link(0) }}">src/Controller/BeyondController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/EscapeGame/templates/beyond/index.html.twig'|file_link(0) }}">templates/beyond/index.html.twig</a></code></li>
-    </ul>
-</div>
+<footer>
+ 
+</footer>
+
+{% block javascripts %}
+   
 {% endblock %}
+</body>
+</html>

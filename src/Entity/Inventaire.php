@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\InventaireRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\InventaireRepository")
+ * @ORM\Entity(repositoryClass=InventaireRepository::class)
  */
 class Inventaire
 {
@@ -26,16 +27,16 @@ class Inventaire
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $user_id;
+    private $team_id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="inventaires")
+     * @ORM\ManyToMany(targetEntity=CurrentGame::class, mappedBy="inventaires")
      */
-    private $scenarioTeams;
+    private $currentGames;
 
     public function __construct()
     {
-        $this->scenarioTeams = new ArrayCollection();
+        $this->currentGames = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -55,43 +56,44 @@ class Inventaire
         return $this;
     }
 
-    public function getUserId(): ?int
+    public function getTeamId(): ?int
     {
-        return $this->user_id;
+        return $this->team_id;
     }
 
-    public function setUserId(?int $user_id): self
+    public function setTeamId(?int $team_id): self
     {
-        $this->user_id = $user_id;
+        $this->team_id = $team_id;
 
         return $this;
     }
 
     /**
-     * @return Collection|ScenarioTeam[]
+     * @return Collection|CurrentGame[]
      */
-    public function getScenarioTeams(): Collection
+    public function getCurrentGames(): Collection
     {
-        return $this->scenarioTeams;
+        return $this->currentGames;
     }
 
-    public function addScenarioTeam(ScenarioTeam $scenarioTeam): self
+    public function addCurrentGame(CurrentGame $currentGame): self
     {
-        if (!$this->scenarioTeams->contains($scenarioTeam)) {
-            $this->scenarioTeams[] = $scenarioTeam;
-            $scenarioTeam->addInventaire($this);
+        if (!$this->currentGames->contains($currentGame)) {
+            $this->currentGames[] = $currentGame;
+            $currentGame->addInventaire($this);
         }
 
         return $this;
     }
 
-    public function removeScenarioTeam(ScenarioTeam $scenarioTeam): self
+    public function removeCurrentGame(CurrentGame $currentGame): self
     {
-        if ($this->scenarioTeams->contains($scenarioTeam)) {
-            $this->scenarioTeams->removeElement($scenarioTeam);
-            $scenarioTeam->removeInventaire($this);
+        if ($this->currentGames->contains($currentGame)) {
+            $this->currentGames->removeElement($currentGame);
+            $currentGame->removeInventaire($this);
         }
 
         return $this;
     }
 }
+

@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 
 
-class User1Type extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,10 +20,10 @@ class User1Type extends AbstractType
             ->add('email')
             ->add('password')
             ->add('roles', ChoiceType::class, array(
-                'choices' => array(
-                    'ROLE_USER' => 'ROLE_USER',
-                    'ROLE_ADMIN' => 'ROLE_ADMIN',
-                    'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',
+                    'choices' => array(
+                        'ROLE_USER' => 'ROLE_USER',
+                        'ROLE_ADMIN' => 'ROLE_ADMIN',
+                        'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',
                     ),
                     'expanded'  => true,
                     'multiple' => true

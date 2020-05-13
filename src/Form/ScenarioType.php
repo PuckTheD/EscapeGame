@@ -2,24 +2,31 @@
 
 namespace App\Form;
 
-use App\Entity\Indice;
 use App\Entity\Scenario;
+use App\Entity\Thematique;
+use App\Entity\Indice;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class IndiceType extends AbstractType
+class ScenarioType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre')
-            ->add('indice_txt')
-            ->add('scenarios', EntityType::class, array(
-                'class'        => Scenario::class,
-                'choice_label' => 'id',
+            ->add('nb_jour')
+            ->add('duree')
+            ->add('thematiques', EntityType::class, array(
+                'class'        => Thematique::class,
+                'choice_label' => 'titre',
+                'multiple'    => true,
+                'expanded'    => true,
+            ))
+            ->add('indices', EntityType::class, array(
+                'class'        => Indice::class,
+                'choice_label' => 'titre',
                 'multiple'    => true,
                 'expanded'    => true,
             ))
@@ -29,7 +36,7 @@ class IndiceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Indice::class,
+            'data_class' => Scenario::class,
         ]);
     }
 }

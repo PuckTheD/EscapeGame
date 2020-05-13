@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\ThematiqueRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ThematiqueRepository")
+ * @ORM\Entity(repositoryClass=ThematiqueRepository::class)
  */
 class Thematique
 {
@@ -17,57 +20,78 @@ class Thematique
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
-    private $scenario;
+    private $titre;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $scenario_id;
+    private $theme;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Scenario", inversedBy="themathiques")
+     * @ORM\ManyToMany(targetEntity=Scenario::class, mappedBy="thematiques")
      */
-    private $themes;
+    private $scenarios;
+
+    public function __construct()
+    {
+        $this->scenarios = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getScenario(): ?string
+    public function getTitre(): ?string
     {
-        return $this->scenario;
+        return $this->titre;
     }
 
-    public function setScenario(?string $scenario): self
+    public function setTitre(string $titre): self
     {
-        $this->scenario = $scenario;
+        $this->titre = $titre;
 
         return $this;
     }
 
-    public function getScenarioId(): ?int
+    public function getTheme(): ?string
     {
-        return $this->scenario_id;
+        return $this->theme;
     }
 
-    public function setScenarioId(?int $scenario_id): self
+    public function setTheme(string $theme): self
     {
-        $this->scenario_id = $scenario_id;
+        $this->theme = $theme;
 
         return $this;
     }
 
-    public function getThemes(): ?Scenario
+    /**
+     * @return Collection|Scenario[]
+     */
+    public function getScenarios(): Collection
     {
-        return $this->themes;
+        return $this->scenarios;
     }
 
-    public function setThemes(?Scenario $themes): self
+    public function addScenario(Scenario $scenario): self
     {
-        $this->themes = $themes;
+        if (!$this->scenarios->contains($scenario)) {
+            $this->scenarios[] = $scenario;
+            $scenario->addThematique($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScenario(Scenario $scenario): self
+    {
+        if ($this->scenarios->contains($scenario)) {
+            $this->scenarios->removeElement($scenario);
+            $scenario->removeThematique($this);
+        }
 
         return $this;
     }

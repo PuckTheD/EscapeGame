@@ -3,9 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Inventaire;
+use App\Entity\CurrentGame;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class InventaireType extends AbstractType
 {
@@ -13,8 +16,14 @@ class InventaireType extends AbstractType
     {
         $builder
             ->add('indice_id')
-            ->add('user_id')
-            ->add('scenarioTeams')
+            ->add('team_id')
+            ->add('currentGames', EntityType::class, array(
+                'class'        => CurrentGame::class,
+                'choice_label' => 'id',
+                'multiple'    => true,
+                'expanded'    => true,
+            ))
+        ;
         ;
     }
 

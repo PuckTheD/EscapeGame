@@ -25,6 +25,14 @@
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <ul>
+                    <li class="usernameConnect">
+                        <p><i class="fab fa-superpowers"></i><span>Salutations </span><b> {{ app.user.nickname }}</b>
+                        </p>
+                    </li>
+                </ul>
+            {% endif %}
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -32,7 +40,8 @@
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150"/>
                                 <div id="text">
-                                    <a href="{{ path('homepage') }}"><span class="spot"></span>Accueil</a>
+                                    <a href="{{ path('homepage') }}"><span class="spot"></span>Accueil
+                                        <i class="fab fa-keycdn"></i></a>
                                 </div>
                             </svg>
                         </div>
@@ -42,21 +51,13 @@
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150"/>
                                 <div id="text">
-                                    <a href="{{ path('homepage') }}#adventures"><span class="spot"></span>Les aventures</a>
+                                    <a href="{{ path('homepage') }}#adventures"><span class="spot"></span>Aventures
+                                        <i class="fas fa-dice-d20"></i>
+                                    </a>
                                 </div>
                             </svg>
                         </div>
                     </li>
-                    <!--<li class="nav-item">
-                        <div class="svg-wrapper">
-                            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                <rect id="shape" height="40" width="150"/>
-                                <div id="text">
-                                    <a href=""><span class="spot"></span>F.A.Q</a>
-                                </div>
-                            </svg>
-                        </div>
-                    </li>-->
                     {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li class="nav-item right dropdown">
                             <div class="svg-wrapper">
@@ -64,6 +65,7 @@
                                     <rect id="shape" height="40" width="155"/>
                                     <div id="text">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Connexion</b>
+                                            <i class="fas fa-dungeon"></i>
                                             <span class="caret spot"></span></a>
                                         <ul id="login-dp" class="dropdown-menu">
                                             <li>
@@ -74,12 +76,16 @@
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="inputEmail2">Adresse
                                                                     mail</label>
-                                                                <input type="email" value="" name="email" id="inputEmail2" class="form-control" placeholder="Adresse mail" required autofocus>
+                                                                <input type="email" value="" name="email"
+                                                                       id="inputEmail2" class="form-control"
+                                                                       placeholder="Adresse mail" required autofocus>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="inputPassword2">Mot
                                                                     de passe</label>
-                                                                <input type="password" name="password" id="inputPassword2" class="form-control" placeholder="Mot de passe" required>
+                                                                <input type="password" name="password"
+                                                                       id="inputPassword2" class="form-control"
+                                                                       placeholder="Mot de passe" required>
                                                                 <div class="help-block text-right"><a href=""
                                                                                                       style="color: #F2F2F2;">Mot
                                                                         de passe oublié ?</a></div>
@@ -100,7 +106,8 @@
                                                         </form>
                                                     </div>
                                                     <div class="bottom text-center">
-                                                        Pas encore inscrit ? <a href="{{ path('user_new') }}"><b style="color: #F2F2F2">Créez
+                                                        Pas encore inscrit ? <a href="{{ path('user_new') }}"><b
+                                                                    style="color: #F2F2F2">Créez
                                                                 vous un compte</b></a>
                                                     </div>
                                                 </div>
@@ -117,7 +124,9 @@
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                     <rect id="shape" height="40" width="150"/>
                                     <div id="text">
-                                        <a href="{{ path('user_show', {'id':app.user.id})}}"><span class="spot"></span>Votre profil</a>
+                                        <a href="{{ path('user_show', {'id':app.user.id}) }}"><span class="spot"></span>Profil
+                                            <i class="fas fa-user-astronaut"></i>
+                                        </a>
                                     </div>
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
@@ -127,7 +136,8 @@
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                     <rect id="shape" height="40" width="150"/>
                                     <div id="text">
-                                        <a href="{{ path ('app_logout') }}"><span class="spot"></span>Se déconnecter</a>
+                                        <a href="{{ path ('app_logout') }}"><span class="spot"></span>Déconnexion
+                                            <i class="fas fa-book-dead"></i></a>
                                     </div>
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
@@ -146,7 +156,7 @@
 <footer>
     <div class="main"></div>
     <div class="footer">
-    <div class="bubbles">
+        <div class="bubbles">
             <div class="bubble"
                  style="--size:2.235501331400517rem; --distance:7.214520868796471rem; --position:49.741899556891354%; --time:2.0249610412192114s; --delay:-3.8753119822279296s;"></div>
             <div class="bubble"
@@ -404,7 +414,7 @@
             <div class="bubble"
                  style="--size:4.318523138555176rem; --distance:8.743673774741552rem; --position:94.19941842888139%; --time:2.2046447577468538s; --delay:-3.1860350176119954s;"></div>
         </div>
-        
+
         <div class="content">
             <div>
                 <div><b>Franck</b> spécialiste BDD et implants capillaires.</div>

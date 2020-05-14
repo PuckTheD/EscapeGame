@@ -28,7 +28,7 @@
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <ul>
                     <li class="usernameConnect">
-                        <p><i class="fab fa-superpowers"></i><span>Salutations </span><b> {{ app.user.nickname }}</b>
+                        <p><img src="{{ asset('images/avatar/') }}{{app.user.avatar}}" alt="avatar" class="md-avatar rounded-circle size-3"><span> Salutations </span><b> {{ app.user.nickname }}</b>
                         </p>
                     </li>
                 </ul>
@@ -106,7 +106,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="bottom text-center">
-                                                        Pas encore inscrit ? <a href="{{ path('user_new') }}"><b
+                                                        Pas encore inscrit ? <a href="{{ path('app_register') }}"><b
                                                                     style="color: #F2F2F2">Créez
                                                                 vous un compte</b></a>
                                                     </div>

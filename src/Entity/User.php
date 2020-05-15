@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -12,7 +11,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface
 {
@@ -33,7 +31,7 @@ class User implements UserInterface
      */
     private $roles = [];
 
-     /**
+    /**
      * @var string The hashed password
      * @ORM\Column(type="string")
      */
@@ -201,5 +199,9 @@ class User implements UserInterface
 
         return $this;
     }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91

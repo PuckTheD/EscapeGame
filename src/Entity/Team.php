@@ -39,12 +39,23 @@ class Team
      */
     private $users;
 
+<<<<<<< HEAD
     
+=======
+    /**
+     * @ORM\OneToMany(targetEntity=CurrentGame::class, mappedBy="teams")
+     */
+    private $currentGames;
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
+<<<<<<< HEAD
         $this->scenarioTeams = new ArrayCollection();
+=======
+        $this->currentGames = new ArrayCollection();
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
     }
 
     public function getId(): ?int
@@ -133,5 +144,38 @@ class Team
         return $this;
     }
 
+<<<<<<< HEAD
    
+=======
+    /**
+     * @return Collection|CurrentGame[]
+     */
+    public function getCurrentGames(): Collection
+    {
+        return $this->currentGames;
+    }
+
+    public function addCurrentGame(CurrentGame $currentGame): self
+    {
+        if (!$this->currentGames->contains($currentGame)) {
+            $this->currentGames[] = $currentGame;
+            $currentGame->setTeams($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCurrentGame(CurrentGame $currentGame): self
+    {
+        if ($this->currentGames->contains($currentGame)) {
+            $this->currentGames->removeElement($currentGame);
+            // set the owning side to null (unless already changed)
+            if ($currentGame->getTeams() === $this) {
+                $currentGame->setTeams(null);
+            }
+        }
+
+        return $this;
+    }
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 }

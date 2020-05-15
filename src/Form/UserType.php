@@ -20,10 +20,10 @@ class UserType extends AbstractType
             ->add('email')
             ->add('password')
             ->add('roles', ChoiceType::class, array(
-                'choices' => array(
-                    'ROLE_USER' => 'ROLE_USER',
-                    'ROLE_ADMIN' => 'ROLE_ADMIN',
-                    'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',
+                    'choices' => array(
+                        'ROLE_USER' => 'ROLE_USER',
+                        'ROLE_ADMIN' => 'ROLE_ADMIN',
+                        'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',
                     ),
                     'expanded'  => true,
                     'multiple' => true

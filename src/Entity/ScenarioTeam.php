@@ -2,12 +2,11 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Repository\ScenarioTeamRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ScenarioTeamRepository")
+ * @ORM\Entity(repositoryClass=ScenarioTeamRepository::class)
  */
 class ScenarioTeam
 {
@@ -24,8 +23,9 @@ class ScenarioTeam
     private $started_at;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Progression", inversedBy="scenarioTeams")
+     * @ORM\ManyToOne(targetEntity=Scenario::class, inversedBy="scenarioTeams")
      */
+<<<<<<< HEAD
     private $progressions;
 
     /**
@@ -52,6 +52,9 @@ class ScenarioTeam
         $this->progressions = new ArrayCollection();
         $this->inventaires = new ArrayCollection();
     }
+=======
+    private $scenarios;
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 
     public function getId(): ?int
     {
@@ -69,6 +72,7 @@ class ScenarioTeam
 
         return $this;
     }
+<<<<<<< HEAD
     
     /**
      * @return Collection|Progression[]
@@ -92,35 +96,40 @@ class ScenarioTeam
         if ($this->progressions->contains($progression)) {
             $this->progressions->removeElement($progression);
         }
+=======
+
+    public function getTeamId(): ?int
+    {
+        return $this->team_id;
+    }
+
+    public function setTeamId(int $team_id): self
+    {
+        $this->team_id = $team_id;
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * @return Collection|Inventaire[]
      */
     public function getInventaires(): Collection
+=======
+    public function getScenarios(): ?Scenario
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
     {
-        return $this->inventaires;
+        return $this->scenarios;
     }
 
-    public function addInventaire(Inventaire $inventaire): self
+    public function setScenarios(?Scenario $scenarios): self
     {
-        if (!$this->inventaires->contains($inventaire)) {
-            $this->inventaires[] = $inventaire;
-        }
+        $this->scenarios = $scenarios;
 
         return $this;
     }
-
-    public function removeInventaire(Inventaire $inventaire): self
-    {
-        if ($this->inventaires->contains($inventaire)) {
-            $this->inventaires->removeElement($inventaire);
-        }
-
-        return $this;
-    }
+<<<<<<< HEAD
 
     public function getTeam(): ?Team
     {
@@ -146,3 +155,6 @@ class ScenarioTeam
         return $this;
     }
 }
+=======
+}
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91

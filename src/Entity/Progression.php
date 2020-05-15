@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\ProgressionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProgressionRepository")
+ * @ORM\Entity(repositoryClass=ProgressionRepository::class)
  */
 class Progression
 {
@@ -21,17 +22,25 @@ class Progression
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $progress;
+    private $Progress;
 
+<<<<<<< HEAD
    
+=======
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ScenarioTeam", mappedBy="progressions")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $scenarioTeams;
+    private $created_at;
+
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
+    /**
+     * @ORM\ManyToMany(targetEntity=CurrentGame::class, mappedBy="progressions")
+     */
+    private $currentGames;
 
     public function __construct()
     {
-        $this->scenarioTeams = new ArrayCollection();
+        $this->currentGames = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -41,39 +50,54 @@ class Progression
 
     public function getProgress(): ?string
     {
-        return $this->progress;
+        return $this->Progress;
     }
 
-    public function setProgress(?string $progress): self
+    public function setProgress(?string $Progress): self
     {
-        $this->progress = $progress;
+        $this->Progress = $Progress;
 
         return $this;
     }
 
-    /**
-     * @return Collection|ScenarioTeam[]
-     */
-    public function getScenarioTeams(): Collection
+<<<<<<< HEAD
+=======
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->scenarioTeams;
+        return $this->created_at;
     }
 
-    public function addScenarioTeam(ScenarioTeam $scenarioTeam): self
+    public function setCreatedAt(?\DateTimeInterface $created_at): self
     {
-        if (!$this->scenarioTeams->contains($scenarioTeam)) {
-            $this->scenarioTeams[] = $scenarioTeam;
-            $scenarioTeam->addProgression($this);
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+>>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
+    /**
+     * @return Collection|CurrentGame[]
+     */
+    public function getCurrentGames(): Collection
+    {
+        return $this->currentGames;
+    }
+
+    public function addCurrentGame(CurrentGame $currentGame): self
+    {
+        if (!$this->currentGames->contains($currentGame)) {
+            $this->currentGames[] = $currentGame;
+            $currentGame->addProgression($this);
         }
 
         return $this;
     }
 
-    public function removeScenarioTeam(ScenarioTeam $scenarioTeam): self
+    public function removeCurrentGame(CurrentGame $currentGame): self
     {
-        if ($this->scenarioTeams->contains($scenarioTeam)) {
-            $this->scenarioTeams->removeElement($scenarioTeam);
-            $scenarioTeam->removeProgression($this);
+        if ($this->currentGames->contains($currentGame)) {
+            $this->currentGames->removeElement($currentGame);
+            $currentGame->removeProgression($this);
         }
 
         return $this;

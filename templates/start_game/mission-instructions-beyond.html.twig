@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset ('assets/css/mission-instructions.css') }} ">
+{% endblock %}
 
 {% block title %}Mission Instruction{% endblock %}
 
 {% block body %}
-    <div class="container py-5">
+    <div class="container py-5 mission_instructions">
 
-        <h1>Lettre de mission </h1>
+        <h1 class="py-5">Lettre de mission </h1>
         <p class="lead">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -33,7 +36,6 @@
 
         </p>
 
-    <a href="#" class="btn bg-bordeaux my-5">Commencer la mission</a>
-
+    <a href="{{ path('beyond', {'id': team.id}) }}" class="btn bg-bordeaux my-5">Commencer la mission</a>
     </div>
 {% endblock %}

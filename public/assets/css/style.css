@@ -413,8 +413,3 @@ body .footer .content > div .image {
         bottom: var(--distance, 10rem);
     }
 }
-.bg-bordeaux {
-    background-color: #7B2A27 !important;
-    border: none;
-    color: white !important;
-}

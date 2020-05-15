@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Esc{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset ('assets/css/style.css') }} ">
+
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-              crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ asset ('assets/css/style.css') }} ">
     {% endblock %}
 
 
@@ -162,7 +163,7 @@
             <div>
                 <div><b>Franck</b> spécialiste BDD et implants capillaires.</div>
                 <div><b>Laura</b> scénariste et MJ de renom.</div>
-                <div><b>Christine</b> chef de projet depuis cinq générations.</div>
+                <div><b>Christine</b> </div>
                 <div><b>Alexandre</b> si c'est beau c'est que c'est de lui.</div>
             </div>
             <div><img src="{{ asset('images/FLAC_PROD_LOGO.png') }}" alt="">

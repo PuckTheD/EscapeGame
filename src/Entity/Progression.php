@@ -24,15 +24,11 @@ class Progression
      */
     private $Progress;
 
-<<<<<<< HEAD
-   
-=======
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created_at;
 
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
     /**
      * @ORM\ManyToMany(targetEntity=CurrentGame::class, mappedBy="progressions")
      */
@@ -60,8 +56,6 @@ class Progression
         return $this;
     }
 
-<<<<<<< HEAD
-=======
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->created_at;
@@ -74,7 +68,6 @@ class Progression
         return $this;
     }
 
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
     /**
      * @return Collection|CurrentGame[]
      */

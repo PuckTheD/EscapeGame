@@ -199,9 +199,4 @@ class User implements UserInterface
 
         return $this;
     }
-<<<<<<< HEAD
-
 }
-=======
-}
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91

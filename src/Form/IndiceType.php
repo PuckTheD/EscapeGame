@@ -15,10 +15,6 @@ class IndiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-<<<<<<< HEAD
-            ->add('hint')
-            ->add('scenario_id')
-=======
             ->add('titre')
             ->add('indice_txt')
             ->add('scenarios', EntityType::class, array(
@@ -27,7 +23,6 @@ class IndiceType extends AbstractType
                 'multiple'    => true,
                 'expanded'    => true,
             ))
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
         ;
     }
 

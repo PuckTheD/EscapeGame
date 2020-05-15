@@ -15,9 +15,6 @@ class ThematiqueType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-<<<<<<< HEAD
-            ->add('name')
-=======
             ->add('titre')
             ->add('theme')
             ->add('scenarios', EntityType::class, array(
@@ -26,7 +23,6 @@ class ThematiqueType extends AbstractType
                 'multiple'    => true,
                 'expanded'    => true,
             ))
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
         ;
     }
 

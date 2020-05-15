@@ -2,10 +2,7 @@
 
 namespace App\Entity;
 
-<<<<<<< HEAD
-=======
 use App\Repository\ThematiqueRepository;
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -23,13 +20,6 @@ class Thematique
     private $id;
 
     /**
-<<<<<<< HEAD
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
-
-
-=======
      * @ORM\Column(type="string", length=100)
      */
     private $titre;
@@ -48,23 +38,12 @@ class Thematique
     {
         $this->scenarios = new ArrayCollection();
     }
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-<<<<<<< HEAD
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-=======
     public function getTitre(): ?string
     {
         return $this->titre;
@@ -73,14 +52,10 @@ class Thematique
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 
         return $this;
     }
 
-<<<<<<< HEAD
-}
-=======
     public function getTheme(): ?string
     {
         return $this->theme;
@@ -121,4 +96,3 @@ class Thematique
         return $this;
     }
 }
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91

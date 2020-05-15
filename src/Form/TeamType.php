@@ -9,7 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class Team1Type extends AbstractType
+class TeamType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

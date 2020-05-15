@@ -39,23 +39,15 @@ class Team
      */
     private $users;
 
-<<<<<<< HEAD
-    
-=======
     /**
      * @ORM\OneToMany(targetEntity=CurrentGame::class, mappedBy="teams")
      */
     private $currentGames;
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
-<<<<<<< HEAD
-        $this->scenarioTeams = new ArrayCollection();
-=======
         $this->currentGames = new ArrayCollection();
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
     }
 
     public function getId(): ?int
@@ -144,9 +136,6 @@ class Team
         return $this;
     }
 
-<<<<<<< HEAD
-   
-=======
     /**
      * @return Collection|CurrentGame[]
      */
@@ -177,5 +166,4 @@ class Team
 
         return $this;
     }
->>>>>>> d07e6edf50b7db4492a3570f3bdc3b8aa951fd91
 }

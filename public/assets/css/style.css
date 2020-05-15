@@ -85,6 +85,11 @@ hr:after {
     box-shadow: 0 0 0 1px #0C0F14, 0 0 5px;
 }
 
+.md-avatar.size-3 {
+    width: 110px;
+    height: 90px;
+}
+
 hr {transform:scale(2)}
 
 .adventures{

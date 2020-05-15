@@ -99,7 +99,7 @@ label #cancel {
 }
 
 .bg-desktop {
-  background-image: url(../img/bureau1.jpg);
+  background-image: url(../../beyond-images/beyond-desktop.jpg);
   background-position: center;
   background-size: cover;
   height: 100vh;

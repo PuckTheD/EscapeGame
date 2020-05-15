@@ -171,10 +171,10 @@ hr {transform:scale(2)}
     margin-bottom: 100px;
 }
 
-.jumbotron .btn {
+jumbotron .btn {
     background-color: #7B2A27;
     border: none;
-}
+}.
 
 .jumbotron .btn:hover, .jumbotron .btn:focus, .jumbotron .btn.active {
     background-color: #0C0F14;
@@ -412,4 +412,9 @@ body .footer .content > div .image {
     100% {
         bottom: var(--distance, 10rem);
     }
+}
+.bg-bordeaux {
+    background-color: #7B2A27 !important;
+    border: none;
+    color: white !important;
 }

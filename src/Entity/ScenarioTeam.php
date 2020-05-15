@@ -18,9 +18,14 @@ class ScenarioTeam
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="integer")
      */
-    private $started_at;
+    private $scenario_id;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $team_id;
 
     /**
      * @ORM\ManyToOne(targetEntity=Scenario::class, inversedBy="scenarioTeams")
@@ -32,14 +37,14 @@ class ScenarioTeam
         return $this->id;
     }
 
-    public function getStartedAt(): ?\DateTimeInterface
+    public function getScenarioId(): ?int
     {
-        return $this->started_at;
+        return $this->scenario_id;
     }
 
-    public function setStartedAt(\DateTimeInterface $started_at): self
+    public function setScenarioId(int $scenario_id): self
     {
-        $this->started_at = $started_at;
+        $this->scenario_id = $scenario_id;
 
         return $this;
     }

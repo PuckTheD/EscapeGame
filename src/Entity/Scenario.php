@@ -22,12 +22,12 @@ class Scenario
     /**
      * @ORM\Column(type="integer")
      */
-    private $description;
+    private $nb_jour;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="time", nullable=true)
      */
-    private $image;
+    private $duree;
 
     /**
      * @ORM\ManyToMany(targetEntity=Thematique::class, inversedBy="scenarios")
@@ -44,19 +44,19 @@ class Scenario
      */
     private $currentGames;
 
+
+
     public function __construct()
     {
         $this->thematiques = new ArrayCollection();
         $this->indices = new ArrayCollection();
+        $this->currentGames = new ArrayCollection();
+
     }
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
     }
 
     public function getNbJour(): ?int
@@ -109,8 +109,6 @@ class Scenario
         return $this;
     }
 
-
-
     /**
      * @return Collection|Indice[]
      */
@@ -136,7 +134,6 @@ class Scenario
 
         return $this;
     }
-
 
     /**
      * @return Collection|CurrentGame[]

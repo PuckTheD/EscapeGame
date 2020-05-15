@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Team;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -52,6 +53,10 @@ class User implements UserInterface
      */
     private $token;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Team::class, inversedBy="users")
+     */
+    private $teams;
 
     public function __construct()
     {
@@ -184,7 +189,6 @@ class User implements UserInterface
     {
         if (!$this->teams->contains($team)) {
             $this->teams[] = $team;
-            $team->addUser($this);
         }
 
         return $this;
@@ -194,7 +198,6 @@ class User implements UserInterface
     {
         if ($this->teams->contains($team)) {
             $this->teams->removeElement($team);
-            $team->removeUser($this);
         }
 
         return $this;

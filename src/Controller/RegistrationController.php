@@ -48,7 +48,10 @@ class RegistrationController extends AbstractController
             }
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
+            if(!empty($user->getAvatar())){
                 $user->setAvatar($newFilename);
+            } else {
+                $user->setAvatar("avatar_defaut.jpg");}
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(

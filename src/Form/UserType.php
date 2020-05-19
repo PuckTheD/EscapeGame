@@ -25,25 +25,7 @@ class UserType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'E-mail'
             ])
-            ->add('plainPassword', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'invalid_message' => 'Le mot de passe n\'est pas identique.',
-                'options' => ['attr' => ['class' => 'password-field']],
-                'required' => false,
-                'first_options' => ['label' => 'Nouveau mot de passe'],
-                'second_options' => ['label' => 'Confirmer nouveau mot de passe'],
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
-                'mapped' => false,
-                'constraints' => [
-                    new Length([
-                        'min' => 0,
-                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 25,
-                    ]),
-                ],
-            ])
+
             ->add('nickname', TextType::class, [
                 'label' => 'Pseudo'
                 ])

@@ -28,15 +28,15 @@ class RegistrationController extends AbstractController
             /** @var UploadedFile $avatarFile */
             $avatarFile = $form->get('avatar')->getData();
 
-            // this condition is needed because the 'brochure' field is not required
-            // so the PDF file must be processed only when a file is uploaded
+            // this condition is needed because the 'avatar' field is not required
+            // so the image file must be processed only when a file is uploaded
             if ($avatarFile) {
                 $originalFilename = pathinfo($avatarFile->getClientOriginalName(), PATHINFO_FILENAME);
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $avatarFile->guessExtension();
 
-                // Move the file to the directory where brochures are stored
+                // Move the file to the directory where avatars are stored
                 try {
                     $avatarFile->move(
                         $this->getParameter('kernel.project_dir').'/public/images/avatar',
@@ -46,7 +46,7 @@ class RegistrationController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
             }
-                // updates the 'brochureFilename' property to store the PDF file name
+                // updates the 'brochureFilename' property to store the image file name
                 // instead of its contents
             if(!empty($user->getAvatar())){
                 $user->setAvatar($newFilename);

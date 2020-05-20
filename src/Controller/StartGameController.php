@@ -17,10 +17,10 @@ class StartGameController extends AbstractController
     public function show(Request $request): Response
     {
         function random($nbr) {
-        $chn = '';
-        for ($i=1;$i<=$nbr;$i++)
-        $chn .= chr(floor(rand(0, 25)+97));
-        return $chn;
+            $chn = '';
+            for ($i=1;$i<=$nbr;$i++)
+            $chn .= chr(floor(rand(0, 25)+97));
+            return $chn;
         }
         $team = new Team();
         $entityManager = $this->getDoctrine()->getManager();
@@ -37,11 +37,12 @@ class StartGameController extends AbstractController
     /**
      * @Route("/beyond/{id}", name="beyond",  methods={"GET"})
      */
-    public function start(Request $request): Response
+    public function start(Request $request, $id): Response
     {
+        $id = $request->query->get('id');
         $currentGame = new CurrentGame();
         $entityManager = $this->getDoctrine()->getManager();
-        //$currentGame->setTeams($this->$_GET['id']);
+        $currentGame->setTeams($id);
         $entityManager->persist($currentGame);
         $entityManager->flush();
 

@@ -16,4 +16,14 @@ class BeyondController extends AbstractController
             'controller_name' => 'BeyondController',
         ]);
     }
+
+    /**
+     * @Route("/beyond/mail", name="beyond-mail")
+     */
+    public function indexMail()
+    {
+        return $this->render('beyond/mail.html.twig', [
+            'controller_name' => 'BeyondController',
+        ]);
+    }
 }

@@ -130,3 +130,26 @@ label #cancel {
   margin-top: 80px;
   list-style: circle;
 }
+
+/* Construction de mes différents dossiers (visuel) */ 
+.folders{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+.folders img{
+  margin-top: 20px; 
+  width: 50px; 
+}
+.wrap-folders{
+  display:flex; 
+  flex-direction: row; 
+  justify-content: space-around; 
+  flex-wrap: wrap; 
+}
+#folder3 li{
+  list-style-type: none; 
+  }

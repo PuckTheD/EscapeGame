@@ -1,7 +1,10 @@
-.mailing-box{
-    background-color: white;
-    height: 100vh;
+.bg-desktop {
+    background-image: none;
 }
 .content{
-    padding: 6rem 0 0 3rem;
+    padding: 6rem 3rem 0 3rem;
+}
+thead{
+    background-color: #273582;
+    color: white;
 }

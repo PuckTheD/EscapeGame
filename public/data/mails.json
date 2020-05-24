@@ -1,5 +1,4 @@
-{
-  "beyond": [
+[
     {
       "date": "date 1",
       "expediteur": "expediteur 1",
@@ -36,4 +35,3 @@
       "contenu": "contenu 5"
     }
   ]
-}

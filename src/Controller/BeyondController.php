@@ -17,17 +17,17 @@ class BeyondController extends AbstractController
         ]);
     }
 
+
     /**
-     * @Route("/beyond/mail", name="beyond-mail")
+     * @Route("/beyond/mail/", name="beyond-mail")
      */
     public function indexMail()
     {
         $data = file_get_contents($this->getParameter('kernel.project_dir') . '/public/data/mails.json');
-        $data = json_decode($data);
+        $data = json_decode($data, true);
         return $this->render('beyond/mail.html.twig', [
             'controller_name' => 'MailController',
-            'data' => $data,
-            dump($data)
+            'data' => $data
         ]);
     }
     /**

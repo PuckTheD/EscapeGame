@@ -22,7 +22,20 @@ class BeyondController extends AbstractController
      */
     public function indexMail()
     {
+        $data = file_get_contents($this->getParameter('kernel.project_dir') . '/public/data/mails.json');
+        $data = json_decode($data);
         return $this->render('beyond/mail.html.twig', [
+            'controller_name' => 'MailController',
+            'data' => $data,
+            dump($data)
+        ]);
+    }
+    /**
+     * @Route("/beyond/map", name="beyond-map")
+     */
+    public function showMap()
+    {
+        return $this->render('beyond/map.html.twig', [
             'controller_name' => 'BeyondController',
         ]);
     }

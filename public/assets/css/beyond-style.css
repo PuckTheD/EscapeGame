@@ -131,16 +131,21 @@ label #cancel {
   list-style: circle;
 }
 
-/* Construction de mes différents dossiers (visuel) */ 
-.folders, .folder-disabled{
+
+/* Construction de mes différents dossiers (visuel) et mise en place */ 
+.folders{
   display: flex; 
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-
 }
-.folders img, .folder-disabled img{
+.folders a{
+  color: white!important; 
+  text-shadow: 2px 2px 2px black!important; 
+}
+
+.folders img{
   margin-top: 20px; 
   width: 50px; 
 }
@@ -154,7 +159,3 @@ label #cancel {
 #folder3 li{
   list-style-type: none; 
   }
-
-.hidden{
-  display: none;
-}

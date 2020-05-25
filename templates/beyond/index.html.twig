@@ -13,10 +13,8 @@
             <!-- Premier dossier "Images" -->
             <!-- Button trigger modal -->
             <div class="folders">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder1">
-                    Images
-                </button>
+                <img  data-toggle="modal" data-target="#folder1" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+                <a data-toggle="modal" data-target="#folder1">Images</a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="folder1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -32,27 +30,19 @@
                         <div class="modal-body">
                             J'ai ouvert le dossier images
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        </div>
                     </div>
                 </div>
             </div>
 
 
             <!-- Deuxième dossier "Voyage"-->
-            <div class="folder-disabled">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary">
-                    Voyage 2019
-                </button>
-            </div>
             <!-- Button trigger modal -->
-            <div class="folders hidden">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder2">
+
+            <div class="folders folder-disabled">
+                <img data-toggle="modal" data-target="#folder2" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+                <a data-toggle="modal" data-target="#folder2">
                     Voyage 2019
-                </button>
+                </a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="folder2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -66,10 +56,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            J'ai ouvert le dossier voyage
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            <form>
+                                <div class="form-group">
+                                    <label for="password-voyage">Pour accéder au contenu du dossier entrez votre mot de passe</label>
+                                    <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe">
+                                    <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Valider</button>
+                            </form>
+                            <div class="folder-content">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,18 +73,12 @@
 
 
             <!-- Troisième dossier "Musique" -->
-            <div class="folder-disabled">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary">
-                    Musiques
-                </button>
-            </div>
             <!-- Button trigger modal -->
-            <div class="folders hidden">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder3">
+            <div class="folders">
+                <img data-toggle="modal" data-target="#folder3" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+                <a data-toggle="modal" data-target="#folder3">
                     Musiques
-                </button>
+                </a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="folder3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -118,26 +108,17 @@
                                     </audio></li>
                             </ul>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Quatrième dossier "Evelyn" -->
-            <div class="folder-disabled">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary">
-                    Evelyn
-                </button>
-            </div>
             <!-- Button trigger modal -->
-            <div class="folders hidden">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder4">
+            <div class="folders">
+                <img data-toggle="modal" data-target="#folder4" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+                <a data-toggle="modal" data-target="#folder4">
                     Evelyn
-                </button>
+                </a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="folder4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -162,17 +143,11 @@
 
             <!-- cinquième dossier "Corbeille" -->
             <!-- Button trigger modal -->
-            <div class="folder-disabled">
-                <img src="{{ asset('images-beyond/beyond-folders-img/trash.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder5">
+            <div class="folders">
+                <img data-toggle="modal" data-target="#folder5" src="{{ asset('images-beyond/beyond-folders-img/trash.png') }}">
+                <a data-toggle="modal" data-target="#folder5">
                     Corbeille
-                </button>
-            </div>
-            <div class="folders hidden">
-                <img src="{{ asset('images-beyond/beyond-folders-img/trash.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder5">
-                    Corbeille
-                </button>
+                </a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="folder5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -197,17 +172,11 @@
 
             <!-- Sixième dossier "Désinstalleur" -->
             <!-- Button trigger modal -->
-            <div class="folder-disabled">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder6">
+            <div class="folders">
+                <img data-toggle="modal" data-target="#folder6" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+                <a data-toggle="modal" data-target="#folder6">
                     Désinstalleur
-                </button>
-            </div>
-            <div class="folders hidden">
-                <img src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#folder6">
-                    Désinstalleur
-                </button>
+                </a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="folder6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -248,4 +217,5 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
     {% endblock %}

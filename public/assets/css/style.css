@@ -86,8 +86,9 @@ hr:after {
 }
 
 .md-avatar.size-3 {
-    width: 110px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
 }
 
 hr {transform:scale(2)}

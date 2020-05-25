@@ -19,17 +19,26 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg static-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="navbar-brand" href="{{ path('homepage') }}">
                 <img src="{{ asset('images/esc-logo-2-final.png') }}" width="80px" height="80px" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
+            {% endif %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="navbar-brand" href="{{ path('homepage') }}">
+                    <img src="{{ asset('images/avatar/') }}{{app.user.avatar}}" alt="avatar" class="md-avatar rounded-circle size-3">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                </button>
                 <ul>
                     <li class="usernameConnect">
-                        <p><img src="{{ asset('images/avatar/') }}{{app.user.avatar}}" alt="avatar" class="md-avatar rounded-circle size-3"><span> Salutations </span><b> {{ app.user.nickname }}</b>
+                        <p><i class="fas fa-hand-spock"></i><span> Salutations </span><b> {{ app.user.nickname }}</b>
                         </p>
                     </li>
                 </ul>
@@ -87,7 +96,7 @@
                                                                 <input type="password" name="password"
                                                                        id="inputPassword2" class="form-control"
                                                                        placeholder="Mot de passe" required>
-                                                                <div class="help-block text-right"><a href=""
+                                                                <div class="help-block text-right"><a href="{{ path('app_forgotten_password') }}"
                                                                                                       style="color: #F2F2F2;">Mot
                                                                         de passe oublié ?</a></div>
                                                             </div>
@@ -95,7 +104,7 @@
                                                                 <input type="hidden" name="_csrf_token"
                                                                        value="{{ csrf_token('authenticate') }}"
                                                                 >
-                                                                <button type="submit" class="btn btn-primary btn-block">
+                                                                <button type="submit" class="btn btn-block">
                                                                     Se connecter
                                                                 </button>
                                                             </div>
@@ -157,8 +166,7 @@
 <footer>
     <div class="main"></div>
     <div class="footer">
-   
-        
+
         <div class="content">
             <div>
                 <div><b>Franck</b> spécialiste BDD et implants capillaires.</div>

@@ -1,0 +1,10 @@
+.bg-desktop {
+    background-image: none;
+}
+.content{
+    padding: 6rem 3rem 0 3rem;
+}
+thead{
+    background-color: #273582;
+    color: white;
+}

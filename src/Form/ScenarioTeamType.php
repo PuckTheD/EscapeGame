@@ -12,10 +12,9 @@ class ScenarioTeamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('scenario_id')
-            ->add('team_id')
-            ->add('progressions')
-            ->add('inventaires')
+            //->add('started_at')
+            //->add('progressions')
+            //->add('inventaires')
         ;
     }
 

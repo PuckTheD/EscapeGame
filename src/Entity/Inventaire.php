@@ -96,4 +96,3 @@ class Inventaire
         return $this;
     }
 }
-

@@ -22,6 +22,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             ->add('email', EmailType::class, [
                 'label' => 'E-mail'
             ])
@@ -53,6 +54,7 @@ class UserType extends AbstractType
                 'multiple'    => true,
                 'expanded'    => true,
             ));*/
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -57,7 +57,13 @@
                             <h5 class="card-title"></a>BEYOND</h5>
                             <p class="card-text">Votre mission, vous occupez seul de la remise à zéro d'un pc. Seul ?
                                 Vraiment ?</p>
-                            <a href="{{ path('beyond') }}" target="_blank" class="btn"></a>Jouer</a>
+                            <a href="
+                            {% if is_granted('ROLE_USER') %}
+                                {{ path('read_mission') }}
+                            {% else %}
+                                {{ path('app_login') }}
+                            {% endif %}
+                            " class="btn"  target="_blank">Jouer</a>
                         </div>
                     </div>
                 </div>

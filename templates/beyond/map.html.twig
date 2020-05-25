@@ -30,11 +30,11 @@
                 // Il est toujours bien de laisser le lien vers la source des données
                 attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                 minZoom: 13,
-                maxZoom: 20
+                maxZoom: 18
             }).addTo(macarte);
             // Nous ajoutons un marqueur
             var marker = L.marker([lat, lon]).addTo(macarte);
-            marker.bindPopup("<b>Shinjuku Gyoen</b><br>lat: 35.6851 long: 139.7072").openPopup();
+            marker.bindPopup("<b>Shinjuku Gyoen</b><br>lat: 35.6851 long: 139.7072");
         }
         window.onload = function(){
             // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé

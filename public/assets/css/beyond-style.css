@@ -132,7 +132,7 @@ label #cancel {
 }
 
 /* Construction de mes différents dossiers (visuel) */ 
-.folders{
+.folders, .folder-disabled{
   display: flex; 
   flex-direction: column;
   justify-content: center;
@@ -140,7 +140,7 @@ label #cancel {
   align-content: center;
 
 }
-.folders img{
+.folders img, .folder-disabled img{
   margin-top: 20px; 
   width: 50px; 
 }
@@ -148,8 +148,13 @@ label #cancel {
   display:flex; 
   flex-direction: row; 
   justify-content: space-around; 
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding-top: 5rem;
 }
 #folder3 li{
   list-style-type: none; 
   }
+
+.hidden{
+  display: none;
+}

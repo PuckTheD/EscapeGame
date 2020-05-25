@@ -37,7 +37,7 @@ class BeyondController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $team->setName('Team:'.random(20));
         $entityManager->persist($team);
-        //$currentGame->setTeams(??);
+        //$currentGame->setTeams([$team]);
         $entityManager->persist($currentGame);
         $entityManager->flush();
 
@@ -66,7 +66,8 @@ class BeyondController extends AbstractController
         $data = json_decode($data, true);
         return $this->render('beyond/mail.html.twig', [
             'controller_name' => 'BeyondController',
-            'data' => $data
+            'data' => $data,
+            dump($data),
         ]);
     }
     /**

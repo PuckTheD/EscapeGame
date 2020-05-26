@@ -137,10 +137,16 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        J'ai ouvert le dossier Evelyn
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <div id="form-evelyn">
+                            <div class="form-group">
+                                <label for="password-evelyn">Mot de passe exigé</label>
+                                <input id="password-evelyn" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-evelyn" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-evelyn">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,10 +265,16 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        J'ai ouvert le dossier désinstalleur
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <div id="form-uninstall">
+                            <div class="form-group">
+                                <label for="password-uninstall">Mot de passe exigé</label>
+                                <input id="password-uninstall" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-uninstall" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-uninstall">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -308,6 +320,18 @@
                 if(document.getElementById("password-musiques").value === "{{ data['beyond'][2].password }}" ){
                     $('#form-musiques').hide();
                     $('.folder-content-musiques').html("{{ data['beyond'][2].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-evelyn").addEventListener("click",()=>{
+                if(document.getElementById("password-evelyn").value === "{{ data['beyond'][3].password }}" ){
+                    $('#form-evelyn').hide();
+                    $('.folder-content-evelyn').html("{{ data['beyond'][3].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-uninstall").addEventListener("click",()=>{
+                if(document.getElementById("password-uninstall").value === "{{ data['beyond'][4].password }}" ){
+                    $('#form-uninstall').hide();
+                    $('.folder-content-uninstall').html("{{ data['beyond'][4].contenu | raw }}");
                 }
             })
         </script>

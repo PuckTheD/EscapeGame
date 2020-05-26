@@ -66,7 +66,7 @@ class SecurityController extends AbstractController
             $token = $tokenGenerator->generateToken();
 
             try{
-                $user->setResetToken($token);
+                $user->setToken($token);
                 $entityManager->flush();
             } catch (\Exception $e) {
                 $this->addFlash('warning', $e->getMessage());
@@ -102,7 +102,7 @@ class SecurityController extends AbstractController
         if ($request->isMethod('POST')) {
             $entityManager = $this->getDoctrine()->getManager();
 
-            $user = $entityManager->getRepository(User::class)->findOneByResetToken($token);
+            $user = $entityManager->getRepository(User::class)->findOneByToken($token);
             /* @var $user User */
 
             if ($user === null) {
@@ -110,7 +110,7 @@ class SecurityController extends AbstractController
                 return $this->redirectToRoute('homepage');
             }
 
-            $user->setResetToken(null);
+            $user->setToken(null);
             $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
             $entityManager->flush();
 

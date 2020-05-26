@@ -166,20 +166,26 @@ label #cancel {
 #folder3 li{
   list-style-type: none; 
   }
-.file-music{
-  width: 25px;
+
+/* Taille des icones des liens*/ 
+.fileType{
+  width: 20px;
   margin: 5px;  
+}
+/*Taille des icones folders*/ 
+.folderType{
+  width: 35px; 
 }
   /* Amélioration de mes modal box*/ 
 
   .modal-content{
     height: auto; 
-    width: 1000px; 
+    width: 1000px;
   }
   .modal-body{
     width: 800px; 
   }
   .modal-header{
-    
     box-shadow: 2px 2px 2px black; 
   }
+  

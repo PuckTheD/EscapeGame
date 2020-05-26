@@ -23,13 +23,90 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Images</h5>
+                        <h5 class="modal-title"><img class="folderType"
+                                src="{{ asset('images-beyond/beyond-folders-img/folder-picture.png') }}"> Images</h5>
                         <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        J'ai ouvert le dossier images
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man01.jpg')}}" target="blank">Image01.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man02.jpg')}}"target="blank">Image02.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man03.jpg')}}"target="blank">Image03.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man04.jpg')}}"target="blank">Image04.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man05.jpg')}}"target="blank">Image05.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man06.jpg')}}"target="blank">Image06.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man07.jpg')}}"target="blank">Image07.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man08.jpg')}}"target="blank">Image08.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man09.jpg')}}"target="blank">Image09.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man10.jpg')}}"target="blank">Image10.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/woman15.jpg')}}"target="blank">Image11.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man12.jpg')}}"target="blank">Image12.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man13.jpg')}}"target="blank">Image13.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man14.jpg')}}"target="blank">Image14.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man11.jpg')}}"target="blank">Image15.jpg</a>
+                        </li>
+
+
                     </div>
                 </div>
             </div>
@@ -92,7 +169,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle"><img class="file-music"
+                        <h5 class="modal-title" id="exampleModalLongTitle"><img class="folderType"
                                 src="{{ asset('images-beyond/beyond-folders-img/folder-music.png') }}"> Musiques</h5>
                         <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -101,7 +178,7 @@
                     <div class="modal-body">
                         <ul>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> 01 - Bach - Suite No.1 - Prelude - Suite pour violoncelle.mp3
                                 <br><audio controls src="{{ asset('musique/bach-violoncelle.mp3') }}">
@@ -109,7 +186,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> 02- Beethoven - Lettre à Elise.mp3
                                 <br><audio controls src="{{ asset('musique/Beethoven-lettre.mp3') }}">
@@ -117,7 +194,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
 
                                 </i> 03- Beethoven - Hymne à l'amour.mp3
@@ -125,7 +202,7 @@
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio></li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
 
                                 04- Beethoven - Sonate au clair de lune.mp3
@@ -134,7 +211,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 05- Carl Orff - O Fortuna - Carmina Burana.mp3
                                 <br><audio controls src="{{ asset('musique/carlorff-carmina.mp3') }}">
@@ -142,15 +219,15 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
-                                src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 06- Claude Debussy - Clair de Lune.mp3
                                 <br><audio controls src="{{ asset('musique/debussy-lune.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 07- Dvorak - Symphonie No.9 - Du nouveau monde.mp3
                                 <br><audio controls src="{{ asset('musique/dvorak-monde.mp3') }}">
@@ -158,7 +235,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 08- Edvard Grieg - Suite No.146 - IV. In the Hall of the
                                 Mountain King.mp3
@@ -167,15 +244,15 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
-                                src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 09- Haendel - Sarabande.mp3
                                 <br><audio controls src="{{ asset('musique/haendel-sarabande.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 10- Mozart - Requiem in D Minor k626 - Requiem Aeternam.mp3
                                 <br><audio controls src="{{ asset('musique/mozart-aeternam.mp3') }}">
@@ -183,7 +260,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 11- Mozart - Requiem in D Minor k626 - Dies Irae.mp3
                                 <br><audio controls src="{{ asset('musique/mozart-diesirae.mp3') }}">
@@ -191,7 +268,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 12- Mozart - Requiem in D Minor k626 - Lacrimosa.mp3
                                 <br><audio controls src="{{ asset('musique/mozart-lacrimosa.mp3') }}">
@@ -199,7 +276,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 13- Tchaikovski - Le lac des cygnes.mp3
                                 <br><audio controls src="{{ asset('musique/tchaikovski-lac.mp3') }}">
@@ -207,7 +284,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 14- Antonio Vivaldi - Concerto No.5 in F Minor, Op.8,
                                 L'inverno, Allegro Non Molto.mp3
@@ -216,7 +293,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 15- Richard Wagner - La chevauchée des walkyries.mp3
                                 <br><audio controls src="{{ asset('Musique/wagner-walkyries.mp3') }}">
@@ -282,7 +359,7 @@
                     <div class="modal-body">
                         <ul>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> L-M-M-J-V-?-D
                                 <br><audio controls src="{{ asset('musique/trash/mc-vanm.mp3') }}">
@@ -290,7 +367,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> J-F-M-A-M-J-J-?-S-O-N-D
                                 <br><audio controls src="{{ asset('musique/trash/mc-cdcdl.mp3') }}">
@@ -298,7 +375,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> Z-W-T-?-N-K-H
                                 <br><audio controls src="{{ asset('musique/trash/mc-tldc.mp3') }}">
@@ -306,7 +383,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> 2-4-6-?-10-12-14-16
                                 <br><audio controls src="{{ asset('musique/trash/mc-rwlcdw.mp3') }}">
@@ -314,7 +391,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> M-V-T-?-J-S-U-N
                                 <br><audio controls src="{{ asset('musique/trash/mc-jsbspv.mp3') }}">
@@ -322,7 +399,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> A-C-E-G-I-K-M-O-?
                                 <br><audio controls src="{{ asset('musique/trash/mc-haesa.mp3') }}">
@@ -330,7 +407,7 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
                                 </i> 1-2-3-5-?-13-21-34
                                 <br><audio controls src="{{ asset('musique/trash/mc-wamdi.mp3') }}">
@@ -338,9 +415,9 @@
                                 </audio>
                             </li>
                             <li>
-                                <img class="file-music"
+                                <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> C-?-E-O-G-P-L	
+                                </i> C-?-E-O-G-P-L
                                 <br><audio controls src="{{ asset('musique/trash/mc-wamdi.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
@@ -390,8 +467,8 @@
     <div class="post-it item">NOTES:
         <hr>
         <ul>
-            <li>Aller boire un Spinoza avec Rachel !</li>
-            <br> 
+            <li>Demander à Jeanne le nom du cocktail !</li>
+            <br>
             <li>Renouveler ma playlist MP3</li>
         </ul>
     </div>

@@ -1,20 +1,14 @@
 {
   "beyond":[
     {
-      "id": 0,
-      "class" : "folder1",
-      "password" : "pass_1234",
-      "contenu": "<p>un test</p>"
+        "password" : "pass_1234",
+        "contenu": "<p>un test</p>"
     }
 
   ], "AutreScenario":[
-  {
-    "id": 0,
-    "date": "date 6",
-    "expediteur": "expediteur 6",
-    "destinataire": "destinataire 6, destinataire 2",
-    "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-    "contenu": "contenu 6"
-  }
-]
+    {
+      "password" : "pass_1234",
+      "contenu": "<p>un test</p>"
+    }
+  ]
 }

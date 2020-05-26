@@ -56,14 +56,12 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
                                 <div class="form-group">
                                     <label for="password-voyage">Pour accéder au contenu du dossier entrez votre mot de passe</label>
-                                    <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe">
+                                    <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
                                     <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Valider</button>
-                            </form>
+                                <button id="validation-form-voyage" class="btn btn-primary">Valider</button>
                             <div class="folder-content">
                             </div>
                         </div>
@@ -218,4 +216,12 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
         <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
+        <script>
+            document.getElementById("validation-form-voyage").addEventListener("click",()=>{
+                if(document.getElementById("password-voyage").value === {{ data['beyond'][0].password }} ){
+                    document.getElementById("form_voyage").fadeOut();
+                    console.log({{ data['beyond'][0].password }});
+                }
+            })
+        </script>
     {% endblock %}

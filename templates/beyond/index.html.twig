@@ -22,7 +22,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Images</h5>
+                            <h5 class="modal-title" >Images</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -218,9 +218,9 @@
         <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
         <script>
             document.getElementById("validation-form-voyage").addEventListener("click",()=>{
-                if(document.getElementById("password-voyage").value === {{ data['beyond'][0].password }} ){
-                    document.getElementById("form_voyage").fadeOut();
-                    console.log({{ data['beyond'][0].password }});
+                if(document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}" ){
+                    document.getElementById("form-voyage").fadeOut();
+                    console.log("{{ data['beyond'][0].password }}");
                 }
             })
         </script>

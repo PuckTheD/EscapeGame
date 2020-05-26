@@ -149,6 +149,11 @@ label #cancel {
   margin-top: 20px; 
   width: 50px; 
 }
+
+.folders:hover {
+  cursor: pointer;
+  border-width: 20px;
+}
 .wrap-folders{
   display:flex; 
   flex-direction: row; 

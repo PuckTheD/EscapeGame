@@ -7,7 +7,10 @@
 {% endblock %}
 {% block body %}
 
+<!-- PARTICLES -->
+<div id="particles-js"></div>
 <div class="bg-desktop">
+    <!-- PARTICLES -->
 
     <div class="wrap-folders">
         <!-- Premier dossier "Images" -->
@@ -505,6 +508,8 @@
         <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
         <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
         <script src="{{ asset ('assets/javascript/draggable.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/particles.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/app.js') }}"></script>
         <script>
             document.getElementById("validation-form-images").addEventListener("click",()=>{
                 if(document.getElementById("password-images").value === "{{ data['beyond'][0].password }}" ){

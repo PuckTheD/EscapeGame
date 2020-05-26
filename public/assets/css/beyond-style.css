@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* Construction de ma sidebar*/ 
 .sidebar {
   position: fixed;
   top:0px; 
@@ -99,6 +100,7 @@ label #cancel {
   margin-left: 250px;
 }
 
+/* Création et disposition de mon background desktop */ 
 .bg-desktop {
   background-image: url(../../images-beyond/beyond-bg-img/beyond-desktop.jpg);
   background-position: center;
@@ -149,6 +151,11 @@ label #cancel {
   margin-top: 20px; 
   width: 50px; 
 }
+
+.folders:hover {
+  cursor: pointer;
+  border-width: 20px;
+}
 .wrap-folders{
   display:flex; 
   flex-direction: row; 
@@ -158,4 +165,21 @@ label #cancel {
 }
 #folder3 li{
   list-style-type: none; 
+  }
+.file-music{
+  width: 25px;
+  margin: 5px;  
+}
+  /* Amélioration de mes modal box*/ 
+
+  .modal-content{
+    height: auto; 
+    width: 1000px; 
+  }
+  .modal-body{
+    width: 800px; 
+  }
+  .modal-header{
+    
+    box-shadow: 2px 2px 2px black; 
   }

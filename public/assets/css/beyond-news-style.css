@@ -1,0 +1,102 @@
+.wrapper {
+    width: 1070px;
+    max-width: 98%;
+    margin: 0 auto 0 auto;
+    background-color: #;
+}
+
+.grid {
+    padding-bottom: 1em;
+}
+
+.top-margin {
+    margin-top: 4em;
+}
+
+small {
+    text-transform: uppercase;
+}
+
+.emphasis {
+    text-transform: uppercase;
+    opacity: .75;
+}
+
+.chat-badge {
+    border: 1px solid #444;
+    border-radius: .3em;
+    margin-bottom: 1.5em;
+    height: 4em;
+    padding: .5em;
+    background: -webkit-linear-gradient(left, rgb(136, 67, 67), rgba(136, 67, 67 1.0) 3.8em, rgba(136, 67, 67 0.0) 3.8em, rgba(136, 67, 67 0.0));
+    background: -moz-linear-gradient(left, rgb(136, 67, 67), rgba(136, 67, 67 1.0) 3.8em, rgba(136, 67, 67 0.0) 3.8em, rgba(136, 67, 67 0.0));
+    background: -o-linear-gradient(left, rgb(136, 67, 67), rgba(136, 67, 67 1.0) 3.8em, rgba(136, 67, 67 0.0) 3.8em, rgba(136, 67, 67 0.0));
+    background: linear-gradient(to right, rgb(136, 67, 67), rgba(136, 67, 67 1.0) 3.8em, rgba(136, 67, 67 0.0) 3.8em, rgba(136, 67, 67 0.0));
+;
+}
+
+.medium-box-right {
+    width: 242px;
+    float: right;
+    margin-left: 1em;
+}
+
+.valign {
+    padding: 10% 0;
+}
+
+.primary-nav {
+    background: -webkit-linear-gradient(left, rgba(136, 67, 67), rgba(136, 67, 67) 15%, rgba(136, 67, 67) 85%, rgba(136, 67, 67));
+    background: -moz-linear-gradient(left, rgba(136, 67, 67), rgba(136, 67, 67) 15%, rgba(136, 67, 67) 85%, rgba(136, 67, 67));
+    background: -o-linear-gradient(left, rgba(136, 67, 67), rgba(136, 67, 67) 15%, rgba(136, 67, 67) 85%, rgba(136, 67, 67));
+    background: linear-gradient(to right, rgba(136, 67, 67), rgba(136, 67, 67) 15%, rgba(136, 67, 67) 85%, rgba(136, 67, 67));
+;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+.action-group {
+    border: 1px solid rgb(105, 105, 105);
+    border-radius: 0 0 1em 1em;
+}
+
+.grid {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: -webkit-linear-gradient(top left, rgba(105, 105, 105, .5), rgba(105, 105, 105, 0) 33%);
+    background: -moz-linear-gradient(top left, rgba(105, 105, 105, .5), rgba(105, 105, 105, 0) 33%);
+    background: -o-linear-gradient(top left, rgba(105, 105, 105, .5), rgba(105, 105, 105, 0) 33%);
+    background: linear-gradient(to bottom right, rgba(105, 105, 105, .5), rgba(105, 105, 105, 0) 33%);
+)
+}
+
+.action-group-large {
+    border-right: 1px solid #666;
+    min-height: 23em;
+}
+
+hr.action-group {
+    position: absolute;
+    width: 109%;
+    height: 1px;
+    border: 0;
+    background: #999;
+    bottom: -15%;
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    /* Bootstrap col-sm */
+    .mini-offset-left {
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Bootstrap col-lg */
+    .mini-offset-left {
+        padding-left: 15px;
+    }
+}

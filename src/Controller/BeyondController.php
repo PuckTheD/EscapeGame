@@ -26,6 +26,7 @@ class BeyondController extends AbstractController
      */
     public function start(Request $request): Response
     {
+
         function random($nbr) {
             $chn = '';
             for ($i=1;$i<=$nbr;$i++)
@@ -37,7 +38,7 @@ class BeyondController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $team->setName('Team:'.random(20));
         $entityManager->persist($team);
-        //$currentGame->setTeams(??);
+        //$currentGame->setTeams([$team]);
         $entityManager->persist($currentGame);
         $entityManager->flush();
 
@@ -53,8 +54,12 @@ class BeyondController extends AbstractController
      */
     public function index()
     {
+        $data = file_get_contents($this->getParameter('kernel.project_dir') . '/public/data/folders.json');
+        $data = json_decode($data, true);
         return $this->render('beyond/index.html.twig', [
             'controller_name' => 'BeyondController',
+            'data' => $data,
+            dump($data),
         ]);
     }
     /**
@@ -66,7 +71,7 @@ class BeyondController extends AbstractController
         $data = json_decode($data, true);
         return $this->render('beyond/mail.html.twig', [
             'controller_name' => 'BeyondController',
-            'data' => $data
+            'data' => $data,
         ]);
     }
     /**

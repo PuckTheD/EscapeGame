@@ -7,13 +7,14 @@
 {% endblock %}
 {% block body %}
 
-<div class="bg-desktop  ui-droppable">
+
+<div id="particles-js" class="bg-desktop">
 
     <div class="wrap-folders">
 
         <!-- Premier dossier "Images" -->
         <!-- Button trigger modal -->
-        <div class="folders item ui-draggable ui-draggable-handle" style="position:relative">
+        <div class="folders draggable">
             <img data-toggle="modal" data-target="#folder1"
                 src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
             <a data-toggle="modal" data-target="#folder1">Images</a>
@@ -93,17 +94,45 @@
                         <ul>
                             <li>
                                 <i class="fas fa-music"></i> Beethoven - Lettre à Elise
-                                <audio controls src="{{ asset('Musique/Beethoven-lettre.mp3') }}">
+                                <audio controls src="{{ asset('musique/Beethoven-lettre.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio></li>
+                                </audio>
+                            </li>
                             <li><i class="fas fa-music"></i> Beethoven - Hymne à l'amour
-                                <audio controls src="{{ asset('Musique/Beethoven-hymne.mp3') }}">
+                                <audio controls src="{{ asset('musique/Beethoven-hymne.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio></li>
+                                </audio>
+                            </li>
+                            <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune
+                                <audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune
+                                <audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune
+                                <audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune
+                                <audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune
+                                <audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
                             <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune
                                 <audio controls src="{{ asset('Musique/Beethoven-sonate.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio></li>
+                                </audio>
+                            </li>
                         </ul>
                     </div>
                     <div class="modal-footer">
@@ -204,8 +233,6 @@
         </div>
 
     </div>
-
-
     <div class="post-it">NOTES:
         <hr>
         <ul>
@@ -215,12 +242,19 @@
 </div>
 
 
+
 {% endblock %}
 
 {% block javascripts %}
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="{{ asset ('assets/javascript/modal.js') }}"></script>
-<script src="{{ asset ('assets/javascript/dragndrop.js') }}"></script>
+<script src="{{ asset('assets/javascript/modal.js') }}"></script>
+<script src="{{ asset('assets/javascript/dragndrop.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+<script src="{{ asset('assets/javascript/bg-particles/app.js') }}"></script>
+<script src="{{ asset('assets/javascript/bg-particles/particles.js') }}"></script>
+<script src="{{ asset('assets/javascript/bg-particles/particles.min.js') }}"></script> 
+
+
 {% endblock %}

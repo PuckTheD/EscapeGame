@@ -56,12 +56,14 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div id="form-voyage">
                                 <div class="form-group">
                                     <label for="password-voyage">Pour accéder au contenu du dossier entrez votre mot de passe</label>
                                     <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
                                     <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
                                 </div>
                                 <button id="validation-form-voyage" class="btn btn-primary">Valider</button>
+                            </div>
                             <div class="folder-content">
                             </div>
                         </div>
@@ -218,9 +220,12 @@
         <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
         <script>
             document.getElementById("validation-form-voyage").addEventListener("click",()=>{
-                if(document.getElementById("password-voyage").value === {{ data['beyond'][0].password }} ){
-                    document.getElementById("form_voyage").fadeOut();
-                    console.log({{ data['beyond'][0].password }});
+                console.log("{{ data['beyond'][0].password }}", document.getElementById("password-voyage").value);
+                if(document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}" ){
+                    $('#form-voyage').fadeOut();
+                    $('.folder-content').fadeOut();
+
+
                 }
             })
         </script>

@@ -10,6 +10,25 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* TEST*/ 
+#particles-js{
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  /*background-color: #000000;*/
+  background-image: url(../../images-beyond/beyond-bg-img/beyond-desktop.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+canvas{
+  display: block;
+  overflow: hidden;
+}
+
 /* Construction de ma sidebar*/ 
 .sidebar {
   position: fixed;
@@ -19,6 +38,8 @@ body {
   height: 100%;
   background: #042331;
   transition: all .5s ease;
+  z-index: 2; 
+ 
 }
 
 .sidebar header {
@@ -42,6 +63,7 @@ body {
   border-bottom: 1px solid black;
   border-top: 1px solid rgba(255, 255, 255, .1);
   transition: .4s;
+  
 }
 
 ul li:hover a {
@@ -61,6 +83,7 @@ label #btn, label #cancel {
   background: #042331;
   border-radius: 3px;
   cursor: pointer;
+  z-index: 2; 
 }
 
 label #btn {
@@ -93,18 +116,26 @@ label #cancel {
 }
 
 #check:checked~label #cancel {
-  left: 195px;
+  left: 195px; 
 }
 
 #check:checked~.bg-desktop {
   margin-left: 250px;
 }
 
-/* Création et disposition de mon background desktop */ 
+/* Création et disposition de mon background desktop  
 .bg-desktop {
   background-image: url(../../images-beyond/beyond-bg-img/beyond-desktop.jpg);
   background-position: center;
   background-size: cover;
+  margin-top:-24px; 
+  height: 100vh;
+  transition: all .5s;
+}*/
+
+/*TEST*/
+.bg-desktop {
+  background: transparent;
   margin-top:-24px; 
   height: 100vh;
   transition: all .5s;

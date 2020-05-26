@@ -20,21 +20,12 @@ class BeyondController extends AbstractController
             'controller_name' => 'BeyondController',
         ]);
     }
-<<<<<<< HEAD
     /**
      * @Route("/beyond/start", name="beyond-start")
      */
     public function start(Request $request): Response
     {
 
-=======
-
-    /**
-     * @Route("/beyond", name="beyond-start")
-     */
-    public function start(Request $request): Response
-    {
->>>>>>> origin/franck
         function random($nbr) {
             $chn = '';
             for ($i=1;$i<=$nbr;$i++)
@@ -46,11 +37,7 @@ class BeyondController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $team->setName('Team:'.random(20));
         $entityManager->persist($team);
-<<<<<<< HEAD
         //$currentGame->setTeams([$team]);
-=======
-        //$currentGame->setTeams(??);
->>>>>>> origin/franck
         $entityManager->persist($currentGame);
         $entityManager->flush();
 
@@ -66,17 +53,12 @@ class BeyondController extends AbstractController
      */
     public function index()
     {
-<<<<<<< HEAD
         $data = file_get_contents($this->getParameter('kernel.project_dir') . '/public/data/folders.json');
         $data = json_decode($data, true);
         return $this->render('beyond/index.html.twig', [
             'controller_name' => 'BeyondController',
             'data' => $data,
             dump($data),
-=======
-        return $this->render('beyond/index.html.twig', [
-            'controller_name' => 'BeyondController',
->>>>>>> origin/franck
         ]);
     }
     /**
@@ -88,11 +70,7 @@ class BeyondController extends AbstractController
         $data = json_decode($data, true);
         return $this->render('beyond/mail.html.twig', [
             'controller_name' => 'BeyondController',
-<<<<<<< HEAD
             'data' => $data,
-=======
-            'data' => $data
->>>>>>> origin/franck
         ]);
     }
     /**
@@ -105,12 +83,8 @@ class BeyondController extends AbstractController
         ]);
     }
 
-<<<<<<< HEAD
 
     /**
-=======
-     /**
->>>>>>> origin/franck
      * @Route("/beyond/calendar", name="beyond-calendar")
      */
     public function showCalendar()
@@ -120,11 +94,7 @@ class BeyondController extends AbstractController
         ]);
     }
 
-<<<<<<< HEAD
     /**
-=======
-     /**
->>>>>>> origin/franck
      * @Route("/beyond/news", name="beyond-news")
      */
     public function showNews()

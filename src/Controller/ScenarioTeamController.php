@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/scenario/team")
+ * @Route("/scenarioteam")
  */
 class ScenarioTeamController extends AbstractController
 {

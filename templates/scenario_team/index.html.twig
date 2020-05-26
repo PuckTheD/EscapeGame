@@ -9,8 +9,6 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Scenario_id</th>
-                <th>Team_id</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,8 +16,6 @@
         {% for scenario_team in scenario_teams %}
             <tr>
                 <td>{{ scenario_team.id }}</td>
-                <td>{{ scenario_team.scenarioId }}</td>
-                <td>{{ scenario_team.teamId }}</td>
                 <td>
                     <a href="{{ path('scenario_team_show', {'id': scenario_team.id}) }}">show</a>
                     <a href="{{ path('scenario_team_edit', {'id': scenario_team.id}) }}">edit</a>

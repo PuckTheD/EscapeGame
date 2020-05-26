@@ -1,0 +1,540 @@
+{% extends 'base-beyond.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ asset ('assets/css/beyond-style.css') }} ">
+{% endblock %}
+{% block body %}
+
+<div class="bg-desktop">
+
+    <div class="wrap-folders">
+        <!-- Premier dossier "Images" -->
+        <!-- Button trigger modal -->
+        <div class="folders item">
+            <img  data-toggle="modal" data-target="#folder1" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+            <a data-toggle="modal" data-target="#folder1">Images</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="folder1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><img class="folderType"
+                                src="{{ asset('images-beyond/beyond-folders-img/folder-picture.png') }}"> Images</h5>
+                        <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man01.jpg')}}" target="blank">Image01.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man02.jpg')}}"target="blank">Image02.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man03.jpg')}}"target="blank">Image03.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man04.jpg')}}"target="blank">Image04.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man05.jpg')}}"target="blank">Image05.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man06.jpg')}}"target="blank">Image06.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man07.jpg')}}"target="blank">Image07.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man08.jpg')}}"target="blank">Image08.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man09.jpg')}}"target="blank">Image09.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man10.jpg')}}"target="blank">Image10.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/woman15.jpg')}}"target="blank">Image11.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man12.jpg')}}"target="blank">Image12.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man13.jpg')}}"target="blank">Image13.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man14.jpg')}}"target="blank">Image14.jpg</a>
+                        </li>
+                        <li>
+                            <img class="fileType"
+                                src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
+                            <a href="{{ asset('images-beyond/beyond-charme/man11.jpg')}}"target="blank">Image15.jpg</a>
+                        </li>
+                        <div id="form-images">
+                            <div class="form-group">
+                                <label for="password-images">Mot de passe exigé</label>
+                                <input id="password-images" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-images" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-images">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Deuxième dossier "Voyage"-->
+        <!-- Button trigger modal -->
+
+        <div class="folders item">
+            <img data-toggle="modal" data-target="#folder2" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+            <a data-toggle="modal" data-target="#folder2">
+                Voyage 2019
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="folder2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Voyage 2019</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="form-voyage">
+                            <div class="form-group">
+                                <label for="password-voyage">Mot de passe exigé</label>
+                                <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-voyage" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-voyages">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Troisième dossier "Musique" -->
+        <!-- Button trigger modal -->
+        <div class="folders item">
+            <img data-toggle="modal" data-target="#folder3" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+            <a data-toggle="modal" data-target="#folder3">
+                Musiques
+            </a>
+        </div>
+            <!-- Modal -->
+        <div class="modal fade" id="folder3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><img class="folderType"
+                                src="{{ asset('images-beyond/beyond-folders-img/folder-music.png') }}"> Musiques</h5>
+                        <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> 01 - Bach - Suite No.1 - Prelude - Suite pour violoncelle.mp3
+                                <br><audio controls src="{{ asset('musique/bach-violoncelle.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> 02- Beethoven - Lettre à Elise.mp3
+                                <br><audio controls src="{{ asset('musique/Beethoven-lettre.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+
+                                </i> 03- Beethoven - Hymne à l'amour.mp3
+                                <br><audio controls src="{{ asset('musique/Beethoven-hymne.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio></li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+
+                                04- Beethoven - Sonate au clair de lune.mp3
+                                <br><audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                05- Carl Orff - O Fortuna - Carmina Burana.mp3
+                                <br><audio controls src="{{ asset('musique/carlorff-carmina.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                06- Claude Debussy - Clair de Lune.mp3
+                                <br><audio controls src="{{ asset('musique/debussy-lune.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                07- Dvorak - Symphonie No.9 - Du nouveau monde.mp3
+                                <br><audio controls src="{{ asset('musique/dvorak-monde.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                08- Edvard Grieg - Suite No.146 - IV. In the Hall of the
+                                Mountain King.mp3
+                                <br><audio controls src="{{ asset('musique/grieg-mountain.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                09- Haendel - Sarabande.mp3
+                                <br><audio controls src="{{ asset('musique/haendel-sarabande.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                10- Mozart - Requiem in D Minor k626 - Requiem Aeternam.mp3
+                                <br><audio controls src="{{ asset('musique/mozart-aeternam.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                11- Mozart - Requiem in D Minor k626 - Dies Irae.mp3
+                                <br><audio controls src="{{ asset('musique/mozart-diesirae.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                12- Mozart - Requiem in D Minor k626 - Lacrimosa.mp3
+                                <br><audio controls src="{{ asset('musique/mozart-lacrimosa.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                13- Tchaikovski - Le lac des cygnes.mp3
+                                <br><audio controls src="{{ asset('musique/tchaikovski-lac.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                14- Antonio Vivaldi - Concerto No.5 in F Minor, Op.8,
+                                L'inverno, Allegro Non Molto.mp3
+                                <br><audio controls src="{{ asset('musique/vivaldi-inverno.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                15- Richard Wagner - La chevauchée des walkyries.mp3
+                                <br><audio controls src="{{ asset('Musique/wagner-walkyries.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                        </ul>
+                        <div id="form-musiques">
+                            <div class="form-group">
+                                <label for="password-musiques">Mot de passe exigé</label>
+                                <input id="password-musiques" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-musiques" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-musiques">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quatrième dossier "Evelyn" -->
+        <!-- Button trigger modal -->
+        <div class="folders item">
+            <img data-toggle="modal" data-target="#folder4"
+                src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+            <a data-toggle="modal" data-target="#folder4">
+                Evelyn
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="folder4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Evelyn</h5>
+                        <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="form-evelyn">
+                            <div class="form-group">
+                                <label for="password-evelyn">Mot de passe exigé</label>
+                                <input id="password-evelyn" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-evelyn" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-evelyn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cinquième dossier "Corbeille" -->
+        <!-- Button trigger modal -->
+        <div class="folders item">
+            <img data-toggle="modal" data-target="#folder5"
+                src="{{ asset('images-beyond/beyond-folders-img/trash.png') }}">
+            <a data-toggle="modal" data-target="#folder5">
+                Corbeille
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="folder5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Corbeille</h5>
+                        <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> L-M-M-J-V-?-D
+                                <br><audio controls src="{{ asset('musique/trash/mc-vanm.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> J-F-M-A-M-J-J-?-S-O-N-D
+                                <br><audio controls src="{{ asset('musique/trash/mc-dcdl.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> Z-W-T-?-N-K-H
+                                <br><audio controls src="{{ asset('musique/trash/mc-tldc.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> 2-4-6-?-10-12-14-16
+                                <br><audio controls src="{{ asset('musique/trash/mc-rwlcdw.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> M-V-T-?-J-S-U-N
+                                <br><audio controls src="{{ asset('musique/trash/mc-jsbspv.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> A-C-E-G-I-K-M-O-?
+                                <br><audio controls src="{{ asset('musique/trash/mc-haesa.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> 1-2-3-5-?-13-21-34
+                                <br><audio controls src="{{ asset('musique/trash/mc-wamdi.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                            <li>
+                                <img class="fileType"
+                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
+                                </i> C-?-E-O-G-P-L
+                                <br><audio controls src="{{ asset('musique/trash/mc-bhala.mp3') }}">
+                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
+                                </audio>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sixième dossier "Désinstalleur" -->
+        <!-- Button trigger modal -->
+        <div class="folders item">
+            <img data-toggle="modal" data-target="#folder6"
+                src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+            <a data-toggle="modal" data-target="#folder6">
+                Désinstalleur
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="folder6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Désinstalleur</h5>
+                        <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="form-uninstall">
+                            <div class="form-group">
+                                <label for="password-uninstall">Mot de passe exigé</label>
+                                <input id="password-uninstall" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-uninstall" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-uninstall">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="post-it item">NOTES:
+        <hr>
+        <ul>
+            <li>Demander à Jeanne le nom du cocktail !</li>
+            <br>
+            <li>Renouveler ma playlist MP3</li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
+
+    {% block javascripts %}
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+                integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/draggable.js') }}"></script>
+        <script>
+            document.getElementById("validation-form-images").addEventListener("click",()=>{
+                if(document.getElementById("password-images").value === "{{ data['beyond'][0].password }}" ){
+                    $('#form-images').hide();
+                    $('.folder-content-images').html("{{ data['beyond'][0].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-voyage").addEventListener("click",()=>{
+                if(document.getElementById("password-voyage").value === "{{ data['beyond'][1].password }}" ){
+                    $('#form-voyage').hide();
+                    $('.folder-content-voyages').html("{{ data['beyond'][1].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-musiques").addEventListener("click",()=>{
+                if(document.getElementById("password-musiques").value === "{{ data['beyond'][2].password }}" ){
+                    $('#form-musiques').hide();
+                    $('.folder-content-musiques').html("{{ data['beyond'][2].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-evelyn").addEventListener("click",()=>{
+                if(document.getElementById("password-evelyn").value === "{{ data['beyond'][3].password }}" ){
+                    $('#form-evelyn').hide();
+                    $('.folder-content-evelyn').html("{{ data['beyond'][3].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-uninstall").addEventListener("click",()=>{
+                if(document.getElementById("password-uninstall").value === "{{ data['beyond'][4].password }}" ){
+                    $('#form-uninstall').hide();
+                    $('.folder-content-uninstall').html("{{ data['beyond'][4].contenu | raw }}");
+                }
+            })
+        </script>
+    {% endblock %}

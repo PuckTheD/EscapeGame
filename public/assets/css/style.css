@@ -414,3 +414,8 @@ body .footer .content > div .image {
         bottom: var(--distance, 10rem);
     }
 }
+.popover{
+    color: #721c24 !important;
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+}

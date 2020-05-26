@@ -20,7 +20,6 @@ class BeyondController extends AbstractController
             'controller_name' => 'BeyondController',
         ]);
     }
-
     /**
      * @Route("/beyond/start", name="beyond-start")
      */

@@ -213,23 +213,17 @@
 
 {% endblock %}
 
-    {% block javascripts %}
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
-        <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
-        <script>
-            document.getElementById("validation-form-voyage").addEventListener("click",()=>{
-<<<<<<< HEAD
-                if(document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}" ){
-                    document.getElementById("form-voyage").fadeOut();
-                    console.log("{{ data['beyond'][0].password }}");
-=======
-                console.log("{{ data['beyond'][0].password }}", document.getElementById("password-voyage").value);
-                if(document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}" ){
-                    $('#form-voyage').fadeOut();
->>>>>>> 35d790ddb7ff70af2214ba64a6db9f7031d498c2
-                }
-            })
-        </script>
-    {% endblock %}
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="{{ asset ('assets/javascript/modal.js') }}"></script>
+<script src="{{ asset ('assets/javascript/folders.js') }}"></script>
+<script>
+    document.getElementById("validation-form-voyage").addEventListener("click",()=>{
+        console.log("{{ data['beyond'][0].password }}", document.getElementById("password-voyage").value);
+        if(document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}" ){
+            $('#form-voyage').fadeOut();
+        }
+    })
+</script>
+{% endblock %}

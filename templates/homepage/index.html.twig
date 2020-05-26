@@ -58,9 +58,9 @@
                             <p class="card-text">Votre mission, vous occupez seul de la remise à zéro d'un pc. Seul ?
                                 Vraiment ?</p>
                             {% if is_granted('ROLE_USER') %}
-                            <a href="{{ path('read_mission') }}" class="btn">Jouer</a>
+                            <a href="{{ path('read_mission') }}" class="btn play">Jouer</a>
                             {% else %}
-                             <span class="btn play" data-toggle="popover" data-content="Pour jouer, vous devez être connecté ! ">Jouer</span>
+                            <span class="btn play" data-toggle="popover"  data-content="Vous devez être connecté pour pouvoir jouer">Jouer</span>
                             {% endif %}
 
                         </div>
@@ -119,14 +119,14 @@
     </section>
 
 
-{% endblock %}
+    {% endblock %}
 
-   {% block javascripts %}
-       <script>
-           $(function () {
-               $('.play').popover({
-                   container: 'body'
-               })
-           })
-       </script>
-   {% endblock %}
+    {% block javascripts %}
+        <script>
+            $(function () {
+                $('.play').popover({
+                    container: 'body'
+                })
+            })
+        </script>
+    {% endblock %}

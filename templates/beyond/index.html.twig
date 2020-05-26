@@ -28,7 +28,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            J'ai ouvert le dossier images
+                            <div id="form-images">
+                                <div class="form-group">
+                                    <label for="password-images">Mot de passe exigé</label>
+                                    <input id="password-images" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                    <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                                </div>
+                                <button id="validation-form-images" class="btn btn-primary">Valider</button>
+                            </div>
+                            <div class="folder-content">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,7 +47,7 @@
             <!-- Deuxième dossier "Voyage"-->
             <!-- Button trigger modal -->
 
-            <div class="folders folder-disabled">
+            <div class="folders">
                 <img data-toggle="modal" data-target="#folder2" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
                 <a data-toggle="modal" data-target="#folder2">
                     Voyage 2019
@@ -58,7 +67,7 @@
                         <div class="modal-body">
                             <div id="form-voyage">
                                 <div class="form-group">
-                                    <label for="password-voyage">Pour accéder au contenu du dossier entrez votre mot de passe</label>
+                                    <label for="password-voyage">Mot de passe exigé</label>
                                     <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
                                     <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
                                 </div>
@@ -92,21 +101,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-music"></i> Beethoven - Lettre à Elise
-                                    <audio controls src="{{ asset('Musique/Beethoven-lettre.mp3') }}">
-                                        votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                    </audio></li>
-                                <li><i class="fas fa-music"></i> Beethoven - Hymne à l'amour
-                                    <audio controls src="{{ asset('Musique/Beethoven-hymne.mp3') }}">
-                                        votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                    </audio></li>
-                                <li><i class="fas fa-music"></i> Beethoven - Sonate au clair de lune 
-                                    <audio controls src="{{ asset('Musique/Beethoven-sonate.mp3') }}">
-                                        votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                    </audio></li>
-                            </ul>
+                            <div id="form-musiques">
+                                <div class="form-group">
+                                    <label for="password-musiques">Mot de passe exigé</label>
+                                    <input id="password-musiques" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                    <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                                </div>
+                                <button id="validation-form-musiques" class="btn btn-primary">Valider</button>
+                            </div>
+                            <div class="folder-content">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,11 +223,22 @@
         <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
         <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
         <script>
+            document.getElementById("validation-form-images").addEventListener("click",()=>{
+                if(document.getElementById("password-images").value === "{{ data['beyond'][0].password }}" ){
+                    $('#form-images').hide();
+                    $('.folder-content').html("{{ data['beyond'][0].contenu | raw }}");
+                }
+            })
             document.getElementById("validation-form-voyage").addEventListener("click",()=>{
-                console.log("{{ data['beyond'][0].password }}", document.getElementById("password-voyage").value);
-                if(document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}" ){
-                    $('#form-voyage').fadeOut();
-
+                if(document.getElementById("password-voyage").value === "{{ data['beyond'][1].password }}" ){
+                    $('#form-voyage').hide();
+                    $('.folder-content').html("{{ data['beyond'][1].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-musiques").addEventListener("click",()=>{
+                if(document.getElementById("password-musiques").value === "{{ data['beyond'][2].password }}" ){
+                    $('#form-musiques').hide();
+                    $('.folder-content').html("{{ data['beyond'][2].contenu | raw }}");
                 }
             })
         </script>

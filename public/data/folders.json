@@ -1,8 +1,16 @@
 {
   "beyond":[
     {
-        "password" : "pass_1234",
-        "contenu": "<p>un test</p>"
+      "password" : "pass_1234",
+      "contenu": "<p>DOSSIER IMAGES</p>"
+    },
+    {
+      "password" : "pass_1234",
+      "contenu": "<p>DOSSIER VOYAGES</p>"
+    },
+    {
+      "password" : "pass_1234",
+      "contenu": "<ul><li><i class='fas fa-music'></i> Beethoven - Lettre à Elise<audio controls src='{{ asset('Musique/Beethoven-lettre.mp3') }}'>votre navigateur ne supporte pas le <code>audio</code> de l'élément.</audio></li><li><i class='fas fa-music'></i> Beethoven - Hymne à l'amour <audio controls src='{{ asset('Musique/Beethoven-hymne.mp3') }}'>votre navigateur ne supporte pas le <code>audio</code> de l'élément.</audio></li><li><i class='fas fa-music'></i> Beethoven - Sonate au clair de lune<audio controls src='{{ asset('Musique/Beethoven-sonate.mp3') }}'>votre navigateur ne supporte pas le <code>audio</code> de l'élément.</audio></li></ul>"
     }
 
   ], "AutreScenario":[

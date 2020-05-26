@@ -10,26 +10,31 @@
 <div class="bg-desktop">
 
     <div class="wrap-folders">
-
         <!-- Premier dossier "Images" -->
         <!-- Button trigger modal -->
-        <div class="folders item" style="position:relative">
-            <img data-toggle="modal" data-target="#folder1"
-                src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+        <div class="folders item">
+            <img  data-toggle="modal" data-target="#folder1" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
             <a data-toggle="modal" data-target="#folder1">Images</a>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="folder1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="folder1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
+<<<<<<< HEAD
                         <h5 class="modal-title"><img class="folderType"
                                 src="{{ asset('images-beyond/beyond-folders-img/folder-picture.png') }}"> Images</h5>
                         <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+=======
+                        <h5 class="modal-title" id="exampleModalLongTitle">Images</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+>>>>>>> a5a0bd923a7ba172e2f73a48c81f981f3762a0f0
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
                         <li>
                             <img class="fileType"
                                 src="{{ asset('images-beyond/beyond-folders-img/file-picture.png') }}">
@@ -107,6 +112,18 @@
                         </li>
 
 
+=======
+                        <div id="form-images">
+                            <div class="form-group">
+                                <label for="password-images">Mot de passe exigé</label>
+                                <input id="password-images" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-images" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-images">
+                        </div>
+>>>>>>> a5a0bd923a7ba172e2f73a48c81f981f3762a0f0
                     </div>
                 </div>
             </div>
@@ -116,37 +133,33 @@
         <!-- Deuxième dossier "Voyage"-->
         <!-- Button trigger modal -->
 
-        <div class="folders item folder-disabled">
-            <img data-toggle="modal" data-target="#folder2"
-                src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+        <div class="folders item">
+            <img data-toggle="modal" data-target="#folder2" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
             <a data-toggle="modal" data-target="#folder2">
                 Voyage 2019
             </a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="folder2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
+                aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Voyage 2019</h5>
-                        <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div id="form-voyage">
                             <div class="form-group">
-                                <label for="password-voyage">Pour accéder au contenu du dossier entrez votre mot de
-                                    passe</label>
-                                <input id="password-voyage" class="form-control form-control-lg" type="text"
-                                    placeholder="Mot de passe" value="">
-                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span
-                                    class=" text-muted hint">Peut-être mettre un indice ici</span>
+                                <label for="password-voyage">Mot de passe exigé</label>
+                                <input id="password-voyage" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
                             </div>
                             <button id="validation-form-voyage" class="btn btn-primary">Valider</button>
                         </div>
-                        <div class="folder-content">
+                        <div class="folder-content-voyages">
                         </div>
                     </div>
                 </div>
@@ -157,25 +170,30 @@
         <!-- Troisième dossier "Musique" -->
         <!-- Button trigger modal -->
         <div class="folders item">
-            <img data-toggle="modal" data-target="#folder3"
-                src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
+            <img data-toggle="modal" data-target="#folder3" src="{{ asset('images-beyond/beyond-folders-img/folder.png') }}">
             <a data-toggle="modal" data-target="#folder3">
                 Musiques
             </a>
         </div>
-        <!-- Modal -->
+            <!-- Modal -->
         <div class="modal fade" id="folder3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
+                aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
+<<<<<<< HEAD
                         <h5 class="modal-title" id="exampleModalLongTitle"><img class="folderType"
                                 src="{{ asset('images-beyond/beyond-folders-img/folder-music.png') }}"> Musiques</h5>
                         <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+=======
+                        <h5 class="modal-title" id="exampleModalLongTitle">Musiques</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+>>>>>>> a5a0bd923a7ba172e2f73a48c81f981f3762a0f0
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
                         <ul>
                             <li>
                                 <img class="fileType"
@@ -301,6 +319,18 @@
                                 </audio>
                             </li>
                         </ul>
+=======
+                        <div id="form-musiques">
+                            <div class="form-group">
+                                <label for="password-musiques">Mot de passe exigé</label>
+                                <input id="password-musiques" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-musiques" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-musiques">
+                        </div>
+>>>>>>> a5a0bd923a7ba172e2f73a48c81f981f3762a0f0
                     </div>
                 </div>
             </div>
@@ -327,10 +357,16 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        J'ai ouvert le dossier Evelyn
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <div id="form-evelyn">
+                            <div class="form-group">
+                                <label for="password-evelyn">Mot de passe exigé</label>
+                                <input id="password-evelyn" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-evelyn" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-evelyn">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -424,9 +460,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -452,15 +485,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        J'ai ouvert le dossier désinstalleur
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <div id="form-uninstall">
+                            <div class="form-group">
+                                <label for="password-uninstall">Mot de passe exigé</label>
+                                <input id="password-uninstall" class="form-control form-control-lg" type="text" placeholder="Mot de passe" value="">
+                                <span class="help pr-2"><i class="fas fa-question-circle"></i></span><span class=" text-muted hint">Peut-être mettre un indice ici</span>
+                            </div>
+                            <button id="validation-form-uninstall" class="btn btn-primary">Valider</button>
+                        </div>
+                        <div class="folder-content-uninstall">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -477,20 +515,44 @@
 
 {% endblock %}
 
-{% block javascripts %}
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
-    integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="{{ asset ('assets/javascript/modal.js') }}"></script>
-<script src="{{ asset ('assets/javascript/folders.js') }}"></script>
-<script src="{{ asset ('assets/javascript/draggable.js') }}"></script>
-<script>
-    document.getElementById("validation-form-voyage").addEventListener("click", () => {
-        console.log("{{ data['beyond'][0].password }}", document.getElementById("password-voyage").value);
-        if (document.getElementById("password-voyage").value === "{{ data['beyond'][0].password }}") {
-            $('#form-voyage').fadeOut();
-        }
-    })
-</script>
-{% endblock %}
+    {% block javascripts %}
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+                integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="{{ asset ('assets/javascript/modal.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/folders.js') }}"></script>
+        <script src="{{ asset ('assets/javascript/draggable.js') }}"></script>
+        <script>
+            document.getElementById("validation-form-images").addEventListener("click",()=>{
+                if(document.getElementById("password-images").value === "{{ data['beyond'][0].password }}" ){
+                    $('#form-images').hide();
+                    $('.folder-content-images').html("{{ data['beyond'][0].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-voyage").addEventListener("click",()=>{
+                if(document.getElementById("password-voyage").value === "{{ data['beyond'][1].password }}" ){
+                    $('#form-voyage').hide();
+                    $('.folder-content-voyages').html("{{ data['beyond'][1].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-musiques").addEventListener("click",()=>{
+                if(document.getElementById("password-musiques").value === "{{ data['beyond'][2].password }}" ){
+                    $('#form-musiques').hide();
+                    $('.folder-content-musiques').html("{{ data['beyond'][2].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-evelyn").addEventListener("click",()=>{
+                if(document.getElementById("password-evelyn").value === "{{ data['beyond'][3].password }}" ){
+                    $('#form-evelyn').hide();
+                    $('.folder-content-evelyn').html("{{ data['beyond'][3].contenu | raw }}");
+                }
+            })
+            document.getElementById("validation-form-uninstall").addEventListener("click",()=>{
+                if(document.getElementById("password-uninstall").value === "{{ data['beyond'][4].password }}" ){
+                    $('#form-uninstall').hide();
+                    $('.folder-content-uninstall').html("{{ data['beyond'][4].contenu | raw }}");
+                }
+            })
+        </script>
+    {% endblock %}

@@ -82,4 +82,25 @@ class BeyondController extends AbstractController
             'controller_name' => 'BeyondController',
         ]);
     }
+
+
+    /**
+     * @Route("/beyond/calendar", name="beyond-calendar")
+     */
+    public function showCalendar()
+    {
+        return $this->render('beyond/calendar.html.twig', [
+            'controller_name' => 'BeyondController',
+        ]);
+    }
+
+    /**
+     * @Route("/beyond/news", name="beyond-news")
+     */
+    public function showNews()
+    {
+        return $this->render('beyond/news.html.twig', [
+            'controller_name' => 'BeyondController',
+        ]);
+    }
 }

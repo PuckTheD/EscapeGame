@@ -60,7 +60,7 @@
                             {% if is_granted('ROLE_USER') %}
                             <a href="{{ path('read_mission') }}" class="btn play">Jouer</a>
                             {% else %}
-                            <span class="btn play" data-toggle="popover"  data-content="Vous devez être connecté pour pouvoir jouer">Jouer</span>
+                            <span class="btn play" data-toggle="popover"  data-content="Pour jouer vous devez être connecté">Jouer</span>
                             {% endif %}
 
                         </div>
@@ -121,12 +121,13 @@
 
     {% endblock %}
 
-    {% block javascripts %}
-        <script>
-            $(function () {
-                $('.play').popover({
-                    container: 'body'
-                })
+{% block javascripts %}
+    <script>
+        $(function () {
+            $('.play').popover({
+                container: 'body'
             })
-        </script>
-    {% endblock %}
+        })
+    </script>
+{% endblock %}
+

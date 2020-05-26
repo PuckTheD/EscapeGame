@@ -172,10 +172,10 @@ hr {transform:scale(2)}
     margin-bottom: 100px;
 }
 
-jumbotron .btn {
+.jumbotron .btn {
     background-color: #7B2A27;
     border: none;
-}.
+}
 
 .jumbotron .btn:hover, .jumbotron .btn:focus, .jumbotron .btn.active {
     background-color: #0C0F14;

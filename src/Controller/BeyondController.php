@@ -22,7 +22,7 @@ class BeyondController extends AbstractController
     }
 
     /**
-     * @Route("/beyond", name="beyond-start")
+     * @Route("/beyond/start", name="beyond-start")
      */
     public function start(Request $request): Response
     {

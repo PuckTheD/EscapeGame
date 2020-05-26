@@ -1,0 +1,9 @@
+.bg-desktop {
+    background-image: none;
+}
+.content{
+    padding: 6rem 3rem 0 3rem;
+}
+#maCarte {
+    height: 500px;
+}

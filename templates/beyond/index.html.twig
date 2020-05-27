@@ -152,7 +152,7 @@
                             </div>
                             <button id="validation-form-voyage" class="btn btn-primary">Valider</button>
                         </div>
-                        <div class="folder-content-voyages">
+                        <div class="folder-content-voyage">
                         </div>
                     </div>
                 </div>
@@ -181,131 +181,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <ul>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> 01 - Bach - Suite No.1 - Prelude - Suite pour violoncelle.mp3
-                                <br><audio controls src="{{ asset('musique/bach-violoncelle.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> 02- Beethoven - Lettre à Elise.mp3
-                                <br><audio controls src="{{ asset('musique/Beethoven-lettre.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-
-                                </i> 03- Beethoven - Hymne à l'amour.mp3
-                                <br><audio controls src="{{ asset('musique/Beethoven-hymne.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio></li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-
-                                04- Beethoven - Sonate au clair de lune.mp3
-                                <br><audio controls src="{{ asset('musique/Beethoven-sonate.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                05- Carl Orff - O Fortuna - Carmina Burana.mp3
-                                <br><audio controls src="{{ asset('musique/carlorff-carmina.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                06- Claude Debussy - Clair de Lune.mp3
-                                <br><audio controls src="{{ asset('musique/debussy-lune.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                07- Dvorak - Symphonie No.9 - Du nouveau monde.mp3
-                                <br><audio controls src="{{ asset('musique/dvorak-monde.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                08- Edvard Grieg - Suite No.146 - IV. In the Hall of the
-                                Mountain King.mp3
-                                <br><audio controls src="{{ asset('musique/grieg-mountain.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                09- Haendel - Sarabande.mp3
-                                <br><audio controls src="{{ asset('musique/haendel-sarabande.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                10- Mozart - Requiem in D Minor k626 - Requiem Aeternam.mp3
-                                <br><audio controls src="{{ asset('musique/mozart-aeternam.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                11- Mozart - Requiem in D Minor k626 - Dies Irae.mp3
-                                <br><audio controls src="{{ asset('musique/mozart-diesirae.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                12- Mozart - Requiem in D Minor k626 - Lacrimosa.mp3
-                                <br><audio controls src="{{ asset('musique/mozart-lacrimosa.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                13- Tchaikovski - Le lac des cygnes.mp3
-                                <br><audio controls src="{{ asset('musique/tchaikovski-lac.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                14- Antonio Vivaldi - Concerto No.5 in F Minor, Op.8,
-                                L'inverno, Allegro Non Molto.mp3
-                                <br><audio controls src="{{ asset('musique/vivaldi-inverno.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                            <li>
-                                <img class="fileType"
-                                    src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                15- Richard Wagner - La chevauchée des walkyries.mp3
-                                <br><audio controls src="{{ asset('Musique/wagner-walkyries.mp3') }}">
-                                    votre navigateur ne supporte pas le <code>audio</code> de l'élément.
-                                </audio>
-                            </li>
-                        </ul>
+                        
                         <div id="form-musiques">
                             <div class="form-group">
                                 <label for="password-musiques">Mot de passe exigé</label>
@@ -315,6 +191,7 @@
                             <button id="validation-form-musiques" class="btn btn-primary">Valider</button>
                         </div>
                         <div class="folder-content-musiques">
+
                         </div>
                     </div>
                 </div>
@@ -382,64 +259,64 @@
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> L-M-M-J-V-?-D
-                                <br><audio controls src="{{ asset('musique/trash/mc-vanm.mp3') }}">
+                                L-M-M-J-V-?-D
+                                <br><audio controls src="{{ asset('Musique/trash/mc-vanm.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> J-F-M-A-M-J-J-?-S-O-N-D
-                                <br><audio controls src="{{ asset('musique/trash/mc-dcdl.mp3') }}">
+                                J-F-M-A-M-J-J-?-S-O-N-D
+                                <br><audio controls src="{{ asset('Musique/trash/mc-dcdl.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> Z-W-T-?-N-K-H
-                                <br><audio controls src="{{ asset('musique/trash/mc-tldc.mp3') }}">
+                                Z-W-T-?-N-K-H
+                                <br><audio controls src="{{ asset('Musique/trash/mc-tldc.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> 2-4-6-?-10-12-14-16
-                                <br><audio controls src="{{ asset('musique/trash/mc-rwlcdw.mp3') }}">
+                                2-4-6-?-10-12-14-16
+                                <br><audio controls src="{{ asset('Musique/trash/mc-rwlcdw.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> M-V-T-?-J-S-U-N
-                                <br><audio controls src="{{ asset('musique/trash/mc-jsbspv.mp3') }}">
+                                M-V-T-?-J-S-U-N
+                                <br><audio controls src="{{ asset('Musique/trash/mc-jsbspv.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> A-C-E-G-I-K-M-O-?
-                                <br><audio controls src="{{ asset('musique/trash/mc-haesa.mp3') }}">
+                                A-C-E-G-I-K-M-O-?
+                                <br><audio controls src="{{ asset('Musique/trash/mc-haesa.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> 1-2-3-5-?-13-21-34
-                                <br><audio controls src="{{ asset('musique/trash/mc-wamdi.mp3') }}">
+                                1-2-3-5-?-13-21-34
+                                <br><audio controls src="{{ asset('Musique/trash/mc-wamdi.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
                             <li>
                                 <img class="fileType"
                                     src="{{ asset('images-beyond/beyond-folders-img/file-music.png') }}">
-                                </i> C-?-E-O-G-P-L
-                                <br><audio controls src="{{ asset('musique/trash/mc-bhala.mp3') }}">
+                                C-?-E-O-G-P-L	
+                                <br><audio controls src="{{ asset('Musique/trash/mc-wamdi.mp3') }}">
                                     votre navigateur ne supporte pas le <code>audio</code> de l'élément.
                                 </audio>
                             </li>
@@ -511,35 +388,25 @@
         <script src="{{ asset ('assets/javascript/particles.js') }}"></script>
         <script src="{{ asset ('assets/javascript/app.js') }}"></script>
         <script>
-            document.getElementById("validation-form-images").addEventListener("click",()=>{
-                if(document.getElementById("password-images").value === "{{ data['beyond'][0].password }}" ){
-                    $('#form-images').hide();
-                    $('.folder-content-images').html("{{ data['beyond'][0].contenu | raw }}");
-                }
-            })
-            document.getElementById("validation-form-voyage").addEventListener("click",()=>{
-                if(document.getElementById("password-voyage").value === "{{ data['beyond'][1].password }}" ){
-                    $('#form-voyage').hide();
-                    $('.folder-content-voyages').html("{{ data['beyond'][1].contenu | raw }}");
-                }
-            })
-            document.getElementById("validation-form-musiques").addEventListener("click",()=>{
-                if(document.getElementById("password-musiques").value === "{{ data['beyond'][2].password }}" ){
-                    $('#form-musiques').hide();
-                    $('.folder-content-musiques').html("{{ data['beyond'][2].contenu | raw }}");
-                }
-            })
-            document.getElementById("validation-form-evelyn").addEventListener("click",()=>{
-                if(document.getElementById("password-evelyn").value === "{{ data['beyond'][3].password }}" ){
-                    $('#form-evelyn').hide();
-                    $('.folder-content-evelyn').html("{{ data['beyond'][3].contenu | raw }}");
-                }
-            })
-            document.getElementById("validation-form-uninstall").addEventListener("click",()=>{
-                if(document.getElementById("password-uninstall").value === "{{ data['beyond'][4].password }}" ){
-                    $('#form-uninstall').hide();
-                    $('.folder-content-uninstall').html("{{ data['beyond'][4].contenu | raw }}");
-                }
-            })
+
+            function validPassword($btn, $input, $password, $form, $folder, $content){
+                document.getElementById($btn).addEventListener("click",()=>{
+                    let inputValue = document.getElementById($input).value;
+                    let password = btoa(inputValue);
+                    if(password === $password ){
+                        $($form).hide();
+                        $($folder).html($content);
+                    }else{
+                        alert('ACCÈS REFUSÉ');
+                    }
+                })
+            }
+            validPassword("validation-form-images", "password-images", "{{ data['beyond'][0].password }}", '#form-images', '.folder-content-images', "{{ data['beyond'][0].contenu | raw }}")
+            validPassword("validation-form-voyage", "password-voyage", "{{ data['beyond'][1].password }}", '#form-voyage', '.folder-content-voyage', "{{ data['beyond'][1].contenu | raw }}")
+            validPassword("validation-form-musiques", "password-musiques", "{{ data['beyond'][2].password }}", '#form-musiques', '.folder-content-musiques', "{{ data['beyond'][2].contenu | raw }}")
+            validPassword("validation-form-evelyn", "password-evelyn", "{{ data['beyond'][3].password }}", '#form-evelyn', '.folder-content-evelyn', "{{ data['beyond'][3].contenu | raw }}")
+            validPassword("validation-form-uninstall", "password-uninstall", "{{ data['beyond'][4].password }}", '#form-uninstall', '.folder-content-uninstall', "{{ data['beyond'][4].contenu | raw }}")
+
+
         </script>
     {% endblock %}

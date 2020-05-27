@@ -219,4 +219,8 @@ label #cancel {
   .modal-header{
     box-shadow: 2px 2px 2px black; 
   }
+.file-music{
+  width: 25px;
+  margin: 5px;
+}
   

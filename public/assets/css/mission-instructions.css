@@ -7,3 +7,10 @@ h1 {
     color: #7B2A27;
     font-weight: 800;
 }
+.mission-instructions{
+    margin-top: 4rem;
+    padding: 0 3rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}

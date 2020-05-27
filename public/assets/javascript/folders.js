@@ -5,3 +5,4 @@
     $( ".help" ).click(function() {
         $( ".hint" ).toggle();
     });
+

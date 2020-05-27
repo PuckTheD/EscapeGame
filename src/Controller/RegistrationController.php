@@ -52,7 +52,7 @@ class RegistrationController extends AbstractController
             if(!empty($user->getAvatar())){
                 $user->setAvatar($newFilename);
             } else {
-                $user->setAvatar("avatar_defaut.jpg");}
+                $user->setAvatar('DefaultAvatar.jpeg');}
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(

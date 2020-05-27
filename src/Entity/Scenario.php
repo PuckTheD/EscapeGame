@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\ScenarioRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ScenarioRepository")
+ * @ORM\Entity(repositoryClass=ScenarioRepository::class)
  */
 class Scenario
 {
@@ -19,12 +20,7 @@ class Scenario
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $themathique;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $nb_jour;
 
@@ -33,21 +29,29 @@ class Scenario
      */
     private $duree;
 
-    
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Thematique", mappedBy="themes")
+     * @ORM\ManyToMany(targetEntity=Thematique::class, inversedBy="scenarios")
      */
-    private $themathiques;
+    private $thematiques;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Indice", mappedBy="indices")
+     * @ORM\ManyToMany(targetEntity=Indice::class, inversedBy="scenarios")
      */
     private $indices;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=CurrentGame::class, mappedBy="scenarios")
+     */
+    private $currentGames;
+
+
+
     public function __construct()
     {
+        $this->thematiques = new ArrayCollection();
         $this->indices = new ArrayCollection();
-        $this->themathiques = new ArrayCollection();
+        $this->currentGames = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -55,24 +59,12 @@ class Scenario
         return $this->id;
     }
 
-    public function getThemathique(): ?string
-    {
-        return $this->themathique;
-    }
-
-    public function setThemathique(?string $themathique): self
-    {
-        $this->themathique = $themathique;
-
-        return $this;
-    }
-
     public function getNbJour(): ?int
     {
         return $this->nb_jour;
     }
 
-    public function setNbJour(?int $nb_jour): self
+    public function setNbJour(int $nb_jour): self
     {
         $this->nb_jour = $nb_jour;
 
@@ -92,6 +84,32 @@ class Scenario
     }
 
     /**
+     * @return Collection|Thematique[]
+     */
+    public function getThematiques(): Collection
+    {
+        return $this->thematiques;
+    }
+
+    public function addThematique(Thematique $thematique): self
+    {
+        if (!$this->thematiques->contains($thematique)) {
+            $this->thematiques[] = $thematique;
+        }
+
+        return $this;
+    }
+
+    public function removeThematique(Thematique $thematique): self
+    {
+        if ($this->thematiques->contains($thematique)) {
+            $this->thematiques->removeElement($thematique);
+        }
+
+        return $this;
+    }
+
+    /**
      * @return Collection|Indice[]
      */
     public function getIndices(): Collection
@@ -103,7 +121,6 @@ class Scenario
     {
         if (!$this->indices->contains($index)) {
             $this->indices[] = $index;
-            $index->setScenario($this);
         }
 
         return $this;
@@ -113,43 +130,37 @@ class Scenario
     {
         if ($this->indices->contains($index)) {
             $this->indices->removeElement($index);
-            // set the owning side to null (unless already changed)
-            if ($index->getScenario() === $this) {
-                $index->setScenario(null);
-            }
         }
 
         return $this;
     }
 
     /**
-     * @return Collection|Thematique[]
+     * @return Collection|CurrentGame[]
      */
-    public function getThemathiques(): Collection
+    public function getCurrentGames(): Collection
     {
-        return $this->themathiques;
+        return $this->currentGames;
     }
 
-    public function addThemathique(Thematique $themathique): self
+    public function addCurrentGame(CurrentGame $currentGame): self
     {
-        if (!$this->themathiques->contains($themathique)) {
-            $this->themathiques[] = $themathique;
-            $themathique->setThemes($this);
+        if (!$this->currentGames->contains($currentGame)) {
+            $this->currentGames[] = $currentGame;
+            $currentGame->addScenario($this);
         }
 
         return $this;
     }
 
-    public function removeThemathique(Thematique $themathique): self
+    public function removeCurrentGame(CurrentGame $currentGame): self
     {
-        if ($this->themathiques->contains($themathique)) {
-            $this->themathiques->removeElement($themathique);
-            // set the owning side to null (unless already changed)
-            if ($themathique->getThemes() === $this) {
-                $themathique->setThemes(null);
-            }
+        if ($this->currentGames->contains($currentGame)) {
+            $this->currentGames->removeElement($currentGame);
+            $currentGame->removeScenario($this);
         }
 
         return $this;
     }
+
 }

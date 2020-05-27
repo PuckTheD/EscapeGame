@@ -1,0 +1,58 @@
+{
+  "beyond":[
+    {
+      "id": 0,
+      "key": "mail1",
+      "date": "date 1",
+      "expediteur": "expediteur 1",
+      "destinataire": "destinataire 1, destinataire 2",
+      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "contenu": "contenu 1"
+    },
+    {
+      "id": 1,
+      "key": "mail2",
+      "date": "date 2",
+      "expediteur": "expediteur 2",
+      "destinataire": "destinataire 1, destinataire 2, destinataire 3",
+      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "contenu": "contenu 2"
+    },
+    {
+      "id": 2,
+      "key": "mail3",
+      "date": "date 3",
+      "expediteur": "expediteur 3",
+      "destinataire": "destinataire 1",
+      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "contenu": "contenu 3"
+    },
+    {
+      "id": 3,
+      "key": "mail4",
+      "date": "date 4",
+      "expediteur": "expediteur 4",
+      "destinataire": "destinataire 1, destinataire 4",
+      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "contenu": "contenu 4"
+    },
+    {
+      "id": 4,
+      "key": "mail5",
+      "date": "date 5",
+      "expediteur": "expediteur 5",
+      "destinataire": "destinataire 1",
+      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "contenu": "contenu 5"
+    }
+  ], "AutreScenario":[
+    {
+      "id": 0,
+      "date": "date 6",
+      "expediteur": "expediteur 6",
+      "destinataire": "destinataire 6, destinataire 2",
+      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "contenu": "contenu 6"
+    }
+  ]
+}

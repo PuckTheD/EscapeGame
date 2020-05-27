@@ -2,12 +2,11 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Repository\ScenarioTeamRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ScenarioTeamRepository")
+ * @ORM\Entity(repositoryClass=ScenarioTeamRepository::class)
  */
 class ScenarioTeam
 {
@@ -29,20 +28,9 @@ class ScenarioTeam
     private $team_id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Progression", inversedBy="scenarioTeams")
+     * @ORM\ManyToOne(targetEntity=Scenario::class, inversedBy="scenarioTeams")
      */
-    private $progressions;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Inventaire", inversedBy="scenarioTeams")
-     */
-    private $inventaires;
-
-    public function __construct()
-    {
-        $this->progressions = new ArrayCollection();
-        $this->inventaires = new ArrayCollection();
-    }
+    private $scenarios;
 
     public function getId(): ?int
     {
@@ -73,54 +61,14 @@ class ScenarioTeam
         return $this;
     }
 
-    /**
-     * @return Collection|Progression[]
-     */
-    public function getProgressions(): Collection
+    public function getScenarios(): ?Scenario
     {
-        return $this->progressions;
+        return $this->scenarios;
     }
 
-    public function addProgression(Progression $progression): self
+    public function setScenarios(?Scenario $scenarios): self
     {
-        if (!$this->progressions->contains($progression)) {
-            $this->progressions[] = $progression;
-        }
-
-        return $this;
-    }
-
-    public function removeProgression(Progression $progression): self
-    {
-        if ($this->progressions->contains($progression)) {
-            $this->progressions->removeElement($progression);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Inventaire[]
-     */
-    public function getInventaires(): Collection
-    {
-        return $this->inventaires;
-    }
-
-    public function addInventaire(Inventaire $inventaire): self
-    {
-        if (!$this->inventaires->contains($inventaire)) {
-            $this->inventaires[] = $inventaire;
-        }
-
-        return $this;
-    }
-
-    public function removeInventaire(Inventaire $inventaire): self
-    {
-        if ($this->inventaires->contains($inventaire)) {
-            $this->inventaires->removeElement($inventaire);
-        }
+        $this->scenarios = $scenarios;
 
         return $this;
     }

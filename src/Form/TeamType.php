@@ -7,10 +7,9 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class Team1Type extends AbstractType
+class TeamType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -21,7 +20,9 @@ class Team1Type extends AbstractType
                 'choice_label' => 'nickname',
                 'multiple'    => true,
                 'expanded'    => true,
+                'help' => 'Quels seront les membres de la team ?',
             ))
+            ->add('leader')
         ;
     }
 

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CurrentGame{% endblock %}
+
+{% block body %}
+    <h1>CurrentGame</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ current_game.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('current_game_index') }}">back to list</a>
+
+    <a href="{{ path('current_game_edit', {'id': current_game.id}) }}">edit</a>
+
+    {{ include('current_game/_delete_form.html.twig') }}
+{% endblock %}

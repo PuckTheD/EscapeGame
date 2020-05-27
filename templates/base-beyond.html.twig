@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Beyond Corp.</title>
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset ('assets/css/beyond-style.css') }} ">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+</label>
+<div class="sidebar">
+    <header>Hi, Evelyn!</header>
+    <ul>
+        <li><a href="{{ path('beyond-dashboard') }}"><i class="fas fa-columns"></i>Dashboard</a></li>
+        <li><a href="{{ path('beyond-news') }}"><i class="far fa-newspaper"></i>News</a></li>
+        <li><a href="{{ path('beyond-calendar') }}"><i class="fas fa-calendar-week"></i>Calendrier</a></li>
+        <li><a href="#"><i class="fas fa-headset"></i>Assistance</a></li>
+        <li><a href="{{ path('beyond-mail') }}"><i class="far fa-envelope"></i>Mail</a></li>
+        <li><a href="{{ path('beyond-map') }}"><i class="far fa-map"></i></i>Map</a></li>
+
+    </ul>
+</div>
+
+{% block body %}{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

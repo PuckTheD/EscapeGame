@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
+use App\Repository\IndiceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\IndiceRepository")
+ * @ORM\Entity(repositoryClass=IndiceRepository::class)
  */
 class Indice
 {
@@ -17,57 +20,78 @@ class Indice
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
-    private $hint;
+    private $titre;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $scenario_id;
+    private $indice_txt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Scenario", inversedBy="indices")
+     * @ORM\ManyToMany(targetEntity=Scenario::class, mappedBy="indices")
      */
-    private $indices;
+    private $scenarios;
+
+    public function __construct()
+    {
+        $this->scenarios = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getHint(): ?string
+    public function getTitre(): ?string
     {
-        return $this->hint;
+        return $this->titre;
     }
 
-    public function setHint(?string $hint): self
+    public function setTitre(string $titre): self
     {
-        $this->hint = $hint;
+        $this->titre = $titre;
 
         return $this;
     }
 
-    public function getScenarioId(): ?int
+    public function getIndiceTxt(): ?string
     {
-        return $this->scenario_id;
+        return $this->indice_txt;
     }
 
-    public function setScenarioId(?int $scenario_id): self
+    public function setIndiceTxt(string $indice_txt): self
     {
-        $this->scenario_id = $scenario_id;
+        $this->indice_txt = $indice_txt;
 
         return $this;
     }
 
-    public function getIndices(): ?Scenario
+    /**
+     * @return Collection|Scenario[]
+     */
+    public function getScenarios(): Collection
     {
-        return $this->indices;
+        return $this->scenarios;
     }
 
-    public function setIndices(?Scenario $indices): self
+    public function addScenario(Scenario $scenario): self
     {
-        $this->indices = $indices;
+        if (!$this->scenarios->contains($scenario)) {
+            $this->scenarios[] = $scenario;
+            $scenario->addIndex($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScenario(Scenario $scenario): self
+    {
+        if ($this->scenarios->contains($scenario)) {
+            $this->scenarios->removeElement($scenario);
+            $scenario->removeIndex($this);
+        }
 
         return $this;
     }

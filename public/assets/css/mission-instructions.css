@@ -1,0 +1,9 @@
+.bg-bordeaux {
+    background-color: #7B2A27 !important;
+    border: none;
+    color: white !important;
+}
+h1 {
+    color: #7B2A27;
+    font-weight: 800;
+}

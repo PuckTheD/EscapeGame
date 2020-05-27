@@ -54,6 +54,12 @@ class User implements UserInterface
     private $token;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $resetToken;
+
+
+    /**
      * @ORM\ManyToMany(targetEntity=Team::class, inversedBy="users")
      */
     private $teams;
@@ -175,6 +181,22 @@ class User implements UserInterface
         $this->token = $token;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResetToken(): string
+    {
+        return $this->resetToken;
+    }
+
+    /**
+     * @param string $resetToken
+     */
+    public function setResetToken(?string $resetToken): void
+    {
+        $this->resetToken = $resetToken;
     }
 
     /**

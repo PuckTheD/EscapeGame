@@ -17,6 +17,7 @@
                     <tr>
                         <th scope="col">Date</th>
                         <th scope="col">Expéditeur</th>
+                        <th scope="col">Destinataire</th>
                         <th scope="col">Objet</th>
                     </tr>
                     </thead>
@@ -26,6 +27,7 @@
                         <tr>
                             <td>{{mail.date}}</td>
                             <td>{{mail.expediteur}}</td>
+                            <td>{{mail.destinataire}}</td>
                             <td>{{mail.objet}} <span class="float-right pr-5"><a href="#"  data-toggle="modal" data-target=".{{ mail.key }}"><i class="fas fa-play"></i></a></span></td>
                         </tr>
                             <div class="modal fade {{ mail.key }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

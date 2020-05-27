@@ -3,7 +3,7 @@
     {
       "id": 0,
       "key": "mail1",
-      "date": "20/05/2020",
+      "date": "20/05/2020 13:03",
       "expediteur": "Jonathan STONE",
       "destinataire": "Evelyn GREY",
       "objet": "Project IE-DAH2805...",
@@ -12,7 +12,7 @@
     {
       "id": 1,
       "key": "mail2",
-      "date": "19/05/2020",
+      "date": "19/05/2020 08h01",
       "expediteur": "Richard DAN",
       "destinataire": "Evelyn GREY",
       "objet": "Ordre des priorités",
@@ -21,7 +21,7 @@
     {
       "id": 2,
       "key": "mail3",
-      "date": "19/05/2020",
+      "date": "19/05/2020 11h14",
       "expediteur": "Jeanne FOSTER",
       "destinataire": "Evelyn GREY",
       "objet": "Tout va bien ?",
@@ -30,7 +30,7 @@
     {
       "id": 3,
       "key": "mail4",
-      "date": "17/05/2020",
+      "date": "19/05/2020 14h37",
       "expediteur": "Jeanne FOSTER",
       "destinataire": "Evelyn GREY",
       "objet": "Besoin de te détendre !",
@@ -39,12 +39,41 @@
     {
       "id": 4,
       "key": "mail5",
-      "date": "17/05/2020",
+      "date": "18/05/2020 7h57",
       "expediteur": "Jonathan STONE",
       "destinataire": "Evelyn GREY",
       "objet": "[PRIORITAIRE] Données de la simulation X-28GIT/Master",
       "contenu": "Bonjour Evelyn, <br><br> Suite à la simulation de jeudi dernier, je suis toujours en attente des résultats dont tu avais la charge. Ce projet est <em>prioritaire</em>!! <br><br>Cordialement,<br><br>J.S<br><br>P.S : Evite s'il te plait de reparle de 'ça' pendant la réunion hebdomadaire. J'ai eu un avertissement de la part de la direction... "
+    },
+    {
+      "id": 5,
+      "key": "mail6",
+      "date": "05/05/2020 9h14",
+      "expediteur": "Michel CRAIG",
+      "destinataire": "Evelyn GREY",
+      "objet": "La boulette !",
+      "contenu": "Salut Evelyn! <br><br> Les mecs de la sécurité ont encore fait une boulette... Ils se sont trompés avec mon prénom ! Vérifie le tien au cas où, ça ne m'étonnerait pas qu'ils en aient loupé d'autres. Faut qu'on trouve un moyen de corriger le tir. Je te paye un café et tu me files ta plaquette ou plus si affinités...<br><br>Des boujoux partout ;)<br><br>Ton Mich-Mich<br><br>PS : Tous ces 0 et 1 me foutent la gerbe. Sérieux, ils n'auraient pas pu trouver une idée plus con. Ou c'est juste parce qu'ils ne savent pas compter jusqu'à deux...?"
+    }, 
+    {
+      "id": 6,
+      "key": "mail7",
+      "date": "05/05/2020 08h54",
+      "expediteur": "Evelyn GREY",
+      "destinataire": "Pascal LEGRAND",
+      "objet": "[BROUILLON]",
+      "contenu": "C'est EVELYN avec Y connard ! Pas un i !"
+    }, 
+    {
+      "id": 7,
+      "key": "mail8",
+      "date": "04/05/2020 08h45",
+      "expediteur": "Pascal LEGRAND",
+      "destinataire": "Evelyn GREY",
+      "objet": "Renouvellement des badges",
+      "contenu": "Bonjour Mme Evelin GREY,<br><br> Suite à la politique adoptée par l'entreprise, tous les badges doivent être renouvelés chaque premier lundi du mois. Un agent de sécurité se chargera de déposer votre nouveau badge à l'accueil de l'entreprise.<br><br>Vous êtes donc priée d'aller le récupérer à l'accueil de 8h à 12h à partir du 6 mai. Notez toutefois que toute personne n'ayant pas son nouveau badge ne pourra rentrer sur le site de l'entreprise.<br><br>Merci de votre compréhension.<br><br>Cordialement,<br><br>Pascal LEGRAND"
     }
+
+
     
   ], "AutreScenario":[
     {

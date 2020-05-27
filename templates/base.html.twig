@@ -128,7 +128,7 @@
                             </div>
                         </li>
                     {% endif %}
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% if is_granted('ROLE_USER') %}
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
@@ -141,6 +141,19 @@
                                 </svg>
                             </div><!-- à ne faire apparaître que si connecté-->
                         </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="nav-item right">
+                            <div class="svg-wrapper">
+                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                                    <rect id="shape" height="40" width="150"/>
+                                    <div id="text">
+                                        <a href="{{ path('admin') }}"><span class="spot"></span>Dashboard
+                                            <i class="fas fa-scroll"></i>
+                                        </a>
+                                    </div>
+                                </svg>
+                            </div>
+                        {% endif %}
                         <li class="nav-item right">
                             <div class="svg-wrapper">
                                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">

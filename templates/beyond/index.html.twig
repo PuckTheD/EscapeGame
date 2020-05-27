@@ -305,6 +305,7 @@
         <script src="{{ asset ('assets/javascript/draggable.js') }}"></script>
         <script>
 
+
             function validPassword($btn, $input, $password, $form, $folder, $content){
                 document.getElementById($btn).addEventListener("click",()=>{
                     let inputValue = document.getElementById($input).value;
@@ -317,7 +318,6 @@
                     }
                 })
             }
-
             validPassword("validation-form-images", "password-images", "{{ data['beyond'][0].password }}", '#form-images', '.folder-content-images', "{{ data['beyond'][0].contenu | raw }}")
             validPassword("validation-form-voyage", "password-voyage", "{{ data['beyond'][1].password }}", '#form-voyage', '.folder-content-voyage', "{{ data['beyond'][1].contenu | raw }}")
             validPassword("validation-form-musiques", "password-musiques", "{{ data['beyond'][2].password }}", '#form-musiques', '.folder-content-musiques', "{{ data['beyond'][2].contenu | raw }}")

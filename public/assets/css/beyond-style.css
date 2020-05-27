@@ -198,6 +198,11 @@ label #cancel {
   list-style-type: none; 
   }
 
+  /*Taille des icones musique*/ 
+  .file-music{
+    width: 25px;
+    margin: 5px;
+  }
 /* Taille des icones des liens*/ 
 .fileType{
   width: 20px;

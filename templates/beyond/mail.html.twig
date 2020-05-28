@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <div class="bg-desktop">
+    <div class="bg-desktop" style="background: linear-gradient(0.217turn, #a2bac3, #ebf8e1, #f8d8b5);">
 
         <div>
             <div class="content">
@@ -38,7 +38,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>{{mail.contenu}}</p>
+                                            <p>{{mail.contenu | raw}}</p>
                                         </div>
                                     </div>
                                 </div>

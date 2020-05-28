@@ -3,54 +3,55 @@
     {
       "id": 0,
       "key": "mail1",
-      "date": "date 1",
-      "expediteur": "expediteur 1",
-      "destinataire": "destinataire 1, destinataire 2",
-      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "contenu": "contenu 1"
+      "date": "20/05/2020",
+      "expediteur": "Jonathan STONE",
+      "destinataire": "Evelyn GREY",
+      "objet": "Project IE-DAH2805...",
+      "contenu": "<span>Evelyn,<br><br><b>J'ai</b> bien compris que ton projet était ambitieux et pourrait apporter quelque chose de <b>neuf</b> à l'entreprise, je ne <b>vais</b> pas te le répéter <b>trois</b> fois ! <br> Mais les enjeux sont trop importants pour qu'on puisse se laisser aller à <b>de</b> telles idées... <b>Dis</b>-toi qu'il vaut mieux t'arrêter maintenant et ne pas avoir <b>de</b> regrets.<br><br>Tu me remercieras plus tard...<br><br><b>J.S</b></span>"
     },
     {
       "id": 1,
       "key": "mail2",
-      "date": "date 2",
-      "expediteur": "expediteur 2",
-      "destinataire": "destinataire 1, destinataire 2, destinataire 3",
-      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "contenu": "contenu 2"
+      "date": "19/05/2020",
+      "expediteur": "Richard DAN",
+      "destinataire": "Evelyn GREY",
+      "objet": "Ordre des priorités",
+      "contenu": "Bonjour Evelyn, <br><br> Suite aux problèmes remontés de votre responsable, M. HUET, j'aimerais vous faire part de mes inquiétudes vis à vis de votre travail. Depuis quelques temps, vous n'êtes plus à ce que vous faites. Nous avons des plannings à respecter et nous ne pouvons nous permettre de subir des pénalités financières car un travail n'a pas été rendu dans les temps.<br><br>Satisfaire nos clients est notre priorité absolue. C'est la dernière fois que je vous le rappelle. <br><br>Cordialement,<br><br>Richard DAN"
     },
     {
       "id": 2,
       "key": "mail3",
-      "date": "date 3",
-      "expediteur": "expediteur 3",
-      "destinataire": "destinataire 1",
-      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "contenu": "contenu 3"
+      "date": "19/05/2020",
+      "expediteur": "Jeanne FOSTER",
+      "destinataire": "Evelyn GREY",
+      "objet": "Tout va bien ?",
+      "contenu": "Coucou Evelyn, <br><br> Comment vas-tu ? Depuis avant-hier, je n'ai plus de nouvelles, je commence à me faire du souci... <br><br>Es-tu malade ?<br><br>Si c'est le cas, je suis là au cas où tu aurais besoin de quoi que ce soit... J'espère en tout cas que tu n'as pas chopé la covid-19 :'(<br><br>Je t'embrasse (de loin) !<br><br>Jeanne"
     },
     {
       "id": 3,
       "key": "mail4",
-      "date": "date 4",
-      "expediteur": "expediteur 4",
-      "destinataire": "destinataire 1, destinataire 4",
-      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "contenu": "contenu 4"
+      "date": "17/05/2020",
+      "expediteur": "Jeanne FOSTER",
+      "destinataire": "Evelyn GREY",
+      "objet": "Besoin de te détendre !",
+      "contenu": "Hello Evelyn !<br><br>Je te propose de venir boire avec moi ce soir. On se donne rendez-vous comme d'hab à 19h30 au bar habituel ? Comme ça, tu pourras me parler de ton projet et de Yohann... ;) <br><br> Donne-moi une réponse rapidement ! Promis, je te donnerai la recette de mon fameux cocktail ! Dis-toi que je lui ai même donné un nom haha. Peut-être qu'un jour, il sera célèbre... Arrête de sourire, j'ai bien le droit de rêver !<br><br> Bisous ma belle, envoie moi un sms ;)<br><br>Jiji"
     },
     {
       "id": 4,
       "key": "mail5",
-      "date": "date 5",
-      "expediteur": "expediteur 5",
-      "destinataire": "destinataire 1",
-      "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "contenu": "contenu 5"
+      "date": "17/05/2020",
+      "expediteur": "Jonathan STONE",
+      "destinataire": "Evelyn GREY",
+      "objet": "[PRIORITAIRE] Données de la simulation X-28GIT/Master",
+      "contenu": "Bonjour Evelyn, <br><br> Suite à la simulation de jeudi dernier, je suis toujours en attente des résultats dont tu avais la charge. Ce projet est <em>prioritaire</em>!! <br><br>Cordialement,<br><br>J.S<br><br>P.S : Evite s'il te plait de reparle de 'ça' pendant la réunion hebdomadaire. J'ai eu un avertissement de la part de la direction... "
     }
+    
   ], "AutreScenario":[
     {
       "id": 0,
-      "date": "date 6",
-      "expediteur": "expediteur 6",
-      "destinataire": "destinataire 6, destinataire 2",
+      "date": "15/05/2020",
+      "expediteur": "expediteur x" ,
+      "destinataire": "destinataire 1, destinataire 2",
       "objet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
       "contenu": "contenu 6"
     }

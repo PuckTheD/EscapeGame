@@ -19,7 +19,7 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = new User();
-        $user->setEmail('alex.hos.27@gmail.com');
+        $user->setEmail('simon.laura.sl@hotmail.fr');
         $user->setNickname('Admin');
         $user->setAvatar('AdminIcon.jpeg');
         $user->setRoles(array('ROLE_ADMIN'));
@@ -27,7 +27,7 @@ class UserFixtures extends Fixture
         $manager->persist($user);
 
         $user2 = new User();
-        $user2->setEmail('puckthed@outlook.fr');
+        $user2->setEmail('laurasimon@hotmail.fr');
         $user2->setNickname('Player1');
         $user2->setAvatar('DefaultAvatar.jpeg');
         $user2->setRoles(array('ROLE_USER'));
